@@ -46,6 +46,34 @@ const social = [
   { label: "YouTube", href: SITE_IDENTITY.social.youtube, Icon: FaYoutube },
 ];
 
+function FooterLinkList({
+  title,
+  links,
+}: {
+  title: string;
+  links: { name: string; href: string }[];
+}) {
+  return (
+    <div>
+      <h4 className="mb-2.5 font-body text-[11px] font-bold uppercase tracking-[0.14em] text-accent-soft">
+        {title}
+      </h4>
+      <ul className="space-y-1.5">
+        {links.map((l) => (
+          <li key={l.href}>
+            <Link
+              href={l.href}
+              className="font-body text-[13px] text-white/85 transition-colors hover:text-white"
+            >
+              {l.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export default function Footer() {
   const { openPopup } = usePopup();
   const year = new Date().getFullYear();
@@ -80,54 +108,48 @@ export default function Footer() {
       </div>
 
       <div className="he-container py-7 sm:py-8">
-        <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-12 lg:gap-5">
-          <div className="lg:col-span-3">
+        {/* Brand + social */}
+        <div className="mb-7 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-end sm:justify-between">
+          <div>
             <Logo
               className="h-11 w-auto object-contain"
               imageWrapperClassName="inline-flex items-center overflow-hidden rounded-[10px] bg-white px-2 py-1.5"
             />
-            <p className="mt-3 max-w-[240px] font-body text-[13px] leading-relaxed text-white/75">
-              Guidance for MBBS in India and overseas, MD/MS routes, and NEET planning.
+            <p className="mt-3 max-w-[280px] font-body text-[13px] leading-relaxed text-white/75">
+              Guidance for MBBS in India and overseas, MD/MS routes, and NEET
+              planning.
             </p>
-            <div className="mt-3.5 flex gap-2">
-              {social.map(({ href, label, Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-accent-soft transition-colors hover:bg-accent hover:text-white"
-                >
-                  <Icon className="h-3.5 w-3.5" />
-                </a>
-              ))}
-            </div>
           </div>
 
+          {/* Social — 2×2 on mobile, row on larger */}
+          <div className="grid w-full max-w-[220px] grid-cols-2 gap-2 sm:flex sm:max-w-none sm:w-auto sm:gap-2">
+            {social.map(({ href, label, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="inline-flex h-10 items-center justify-center gap-2 rounded-[10px] border border-white/10 bg-white/10 px-3 font-body text-xs font-semibold text-white transition-colors hover:border-accent hover:bg-accent sm:h-9 sm:w-9 sm:gap-0 sm:rounded-full sm:px-0"
+              >
+                <Icon className="h-3.5 w-3.5 text-accent-soft sm:text-inherit" />
+                <span className="sm:hidden">{label}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Link columns — 2-up on mobile, full grid on desktop */}
+        <div className="grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-2 lg:grid-cols-12 lg:gap-5">
           <div className="lg:col-span-2">
-            <h4 className="mb-2.5 font-body text-[11px] font-bold uppercase tracking-[0.14em] text-accent-soft">
-              Pathways
-            </h4>
-            <ul className="space-y-1.5">
-              {pathways.map((l) => (
-                <li key={l.href}>
-                  <Link
-                    href={l.href}
-                    className="font-body text-[13px] text-white/85 transition-colors hover:text-white"
-                  >
-                    {l.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <FooterLinkList title="Pathways" links={pathways} />
           </div>
 
           <div className="lg:col-span-2">
             <h4 className="mb-2.5 font-body text-[11px] font-bold uppercase tracking-[0.14em] text-accent-soft">
               Destinations
             </h4>
-            <ul className="space-y-1.5">
+            <ul className="grid grid-cols-1 gap-y-1.5">
               {destinations.map((l) => (
                 <li key={l.href}>
                   <Link
@@ -142,28 +164,14 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <h4 className="mb-2.5 font-body text-[11px] font-bold uppercase tracking-[0.14em] text-accent-soft">
-              Company
-            </h4>
-            <ul className="space-y-1.5">
-              {company.map((l) => (
-                <li key={l.href}>
-                  <Link
-                    href={l.href}
-                    className="font-body text-[13px] text-white/85 transition-colors hover:text-white"
-                  >
-                    {l.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <FooterLinkList title="Company" links={company} />
           </div>
 
-          <div className="lg:col-span-3">
+          <div className="col-span-2 sm:col-span-2 lg:col-span-6">
             <h4 className="mb-2.5 font-body text-[11px] font-bold uppercase tracking-[0.14em] text-accent-soft">
               Offices & contact
             </h4>
-            <ul className="space-y-3 font-body text-[13px] text-white/85">
+            <ul className="grid gap-3 sm:grid-cols-2 font-body text-[13px] text-white/85">
               {SITE_IDENTITY.offices.map((office) => (
                 <li key={office.id} className="flex gap-2">
                   <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent-soft" />
@@ -199,9 +207,10 @@ export default function Footer() {
 
         <div className="mt-6 flex flex-col gap-2 border-t border-white/10 pt-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-body text-[11px] text-white/55">
-            © {year} {SITE_IDENTITY.name}. Admission counselling only — confirm fees and seats with official college sources.
+            © {year} {SITE_IDENTITY.name}. Admission counselling only — confirm
+            fees and seats with official college sources.
           </p>
-          <div className="flex gap-4 font-body text-[11px] text-white/55">
+          <div className="grid grid-cols-3 gap-2 sm:flex sm:gap-4 font-body text-[11px] text-white/55">
             <Link href="/privacy" className="hover:text-accent-soft">
               Privacy
             </Link>

@@ -52,7 +52,7 @@ export default function DestinationsSection() {
           />
         </FadeIn>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-3 grid-cols-2 lg:grid-cols-4">
           {destinations.map((d, i) => (
             <FadeIn key={d.slug} delay={i * 0.07}>
               <Link href={`/country/${d.slug}`} className="he-card he-card-photo group overflow-hidden block">
@@ -62,16 +62,16 @@ export default function DestinationsSection() {
                     alt={`MBBS in ${d.name}`}
                     fill
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.08]"
-                    sizes="(max-width: 768px) 100vw, 25vw"
+                    sizes="(max-width: 768px) 50vw, 25vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/88 via-primary/30 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-1 transition-transform duration-500 group-hover:translate-y-0">
-                    <h3 className="font-display text-xl font-bold text-white">{d.name}</h3>
-                    <p className="mt-1 max-h-0 overflow-hidden font-body text-xs text-white/85 opacity-0 transition-all duration-500 group-hover:max-h-12 group-hover:opacity-100">
+                  <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 translate-y-1 transition-transform duration-500 group-hover:translate-y-0">
+                    <h3 className="font-display text-base font-bold text-white sm:text-xl">{d.name}</h3>
+                    <p className="mt-1 hidden max-h-0 overflow-hidden font-body text-xs text-white/85 opacity-0 transition-all duration-500 sm:block group-hover:max-h-12 group-hover:opacity-100">
                       {d.note}
                     </p>
-                    <span className="mt-2 inline-flex items-center gap-1 font-body text-xs font-bold text-accent">
-                      Explore destination
+                    <span className="mt-1.5 inline-flex items-center gap-1 font-body text-[11px] font-bold text-accent sm:mt-2 sm:text-xs">
+                      Explore
                       <ArrowUpRight className="h-3.5 w-3.5" />
                     </span>
                   </div>

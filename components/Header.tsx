@@ -11,6 +11,7 @@ import {
   Search,
   Phone,
   Mail,
+  Target,
 } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import Logo from "./Logo";
@@ -545,23 +546,46 @@ export default function Header() {
           </div>
         </nav>
 
-        <div className="relative ml-auto hidden shrink-0 min-[1180px]:block">
-          <button
-            type="button"
+        <div className="relative ml-auto hidden shrink-0 items-center gap-2 min-[1180px]:flex">
+          <Link
+            href="/neet-rank-predictor"
             onMouseEnter={scheduleClose}
-            onClick={openPopup}
-            className="relative z-[1] inline-flex h-10 items-center rounded-[12px] bg-accent px-5 font-body text-[13px] font-bold text-white shadow-[0_4px_14px_rgba(21,128,61,0.35)] transition-all hover:-translate-y-0.5 hover:bg-accent-deep"
+            aria-label="NEET Rank Predictor"
+            className={`group relative z-[1] inline-flex h-10 items-center gap-2 overflow-hidden rounded-[12px] px-3.5 font-body text-[13px] font-bold transition-all hover:-translate-y-0.5 ${
+              isActive("/neet-rank-predictor")
+                ? "bg-gradient-to-r from-accent to-accent-deep text-white shadow-[0_4px_14px_rgba(21,128,61,0.35)]"
+                : "border border-accent/30 bg-accent/10 text-accent-deep hover:border-accent/50 hover:bg-accent hover:text-white hover:shadow-[0_6px_16px_rgba(21,128,61,0.28)]"
+            }`}
           >
-            Start Application
-          </button>
+            <span
+              className={`relative inline-flex h-7 w-7 items-center justify-center rounded-[9px] transition-colors ${
+                isActive("/neet-rank-predictor")
+                  ? "bg-white/20 ring-1 ring-white/30"
+                  : "bg-accent text-white group-hover:bg-white group-hover:text-accent"
+              }`}
+            >
+              <Target className="h-3.5 w-3.5" strokeWidth={2.4} />
+            </span>
+            <span className="relative whitespace-nowrap">NEET Predictor</span>
+          </Link>
 
-          <button
-            type="button"
-            onMouseEnter={scheduleClose}
-            onClick={openPopup}
-            aria-label="Book a counselling call"
-            className="enquiry-hang absolute left-1/2 top-full z-[70] pt-1"
-          >
+          <div className="relative">
+            <button
+              type="button"
+              onMouseEnter={scheduleClose}
+              onClick={openPopup}
+              className="relative z-[1] inline-flex h-10 items-center rounded-[12px] bg-accent px-5 font-body text-[13px] font-bold text-white shadow-[0_4px_14px_rgba(21,128,61,0.35)] transition-all hover:-translate-y-0.5 hover:bg-accent-deep"
+            >
+              Start Application
+            </button>
+
+            <button
+              type="button"
+              onMouseEnter={scheduleClose}
+              onClick={openPopup}
+              aria-label="Book a counselling call"
+              className="enquiry-hang absolute left-1/2 top-full z-[70] pt-1"
+            >
             <span className="enquiry-hang-string mx-auto flex flex-col items-center gap-1">
               <span className="h-2 w-2 rounded-full bg-white shadow-[0_0_0_1px_rgba(216,50,74,0.4)]" />
               <span className="h-2 w-2 rounded-full bg-white shadow-[0_0_0_1px_rgba(216,50,74,0.4)]" />
@@ -583,20 +607,47 @@ export default function Header() {
               </span>
               Get Guidance
             </span>
-          </button>
+            </button>
+          </div>
         </div>
 
-        <button
-          type="button"
-          className="ml-auto inline-flex h-10 w-10 items-center justify-center rounded-[10px] border border-border text-text min-[1180px]:hidden"
-          onClick={() => {
-            setPanel(null);
-            setMobileOpen((v) => !v);
-          }}
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-        >
-          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="ml-auto flex items-center gap-2 min-[1180px]:hidden">
+          <Link
+            href="/neet-rank-predictor"
+            onClick={() => {
+              setMobileOpen(false);
+              setPanel(null);
+            }}
+            aria-label="NEET Rank Predictor"
+            className={`inline-flex h-10 items-center gap-1.5 rounded-[10px] px-2.5 font-body text-[12px] font-bold ${
+              isActive("/neet-rank-predictor")
+                ? "bg-gradient-to-r from-accent to-accent-deep text-white shadow-[0_3px_10px_rgba(21,128,61,0.3)]"
+                : "border border-accent/30 bg-accent/10 text-accent-deep"
+            }`}
+          >
+            <span
+              className={`inline-flex h-6 w-6 items-center justify-center rounded-[7px] ${
+                isActive("/neet-rank-predictor")
+                  ? "bg-white/20"
+                  : "bg-accent text-white"
+              }`}
+            >
+              <Target className="h-3.5 w-3.5" strokeWidth={2.4} />
+            </span>
+            <span className="pr-0.5">NEET</span>
+          </Link>
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-[10px] border border-border text-text"
+            onClick={() => {
+              setPanel(null);
+              setMobileOpen((v) => !v);
+            }}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          >
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -755,6 +806,23 @@ export default function Header() {
               </div>
 
               <div className="space-y-2 border-t border-border pt-3">
+                <Link
+                  href="/neet-rank-predictor"
+                  onClick={() => setMobileOpen(false)}
+                  className="group flex w-full items-center gap-3 rounded-[14px] border border-accent/25 bg-gradient-to-r from-accent/10 to-accent/5 px-4 py-3.5 text-left transition-colors hover:border-accent/40 hover:from-accent hover:to-accent-deep hover:text-white"
+                >
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-[12px] bg-accent text-white shadow-[0_4px_12px_rgba(21,128,61,0.28)] transition-colors group-hover:bg-white group-hover:text-accent">
+                    <Target className="h-5 w-5" strokeWidth={2.3} />
+                  </span>
+                  <span>
+                    <span className="block font-body text-[15px] font-bold text-inherit">
+                      NEET Rank Predictor
+                    </span>
+                    <span className="block font-body text-xs text-muted group-hover:text-white/80">
+                      Estimate rank from your score
+                    </span>
+                  </span>
+                </Link>
                 <a
                   href={`tel:${phoneTel}`}
                   className="flex items-center gap-2 rounded-[10px] px-4 py-2 font-body text-sm font-semibold text-primary"

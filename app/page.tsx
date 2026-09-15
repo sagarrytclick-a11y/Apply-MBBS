@@ -8,8 +8,12 @@ import TrustBar from "@/components/home/TrustBar";
 import BrandLogosSlider from "@/components/home/BrandLogosSlider";
 import StatsSection from "@/components/home/StatsSection";
 import OfferingsSection from "@/components/home/OfferingsSection";
+import DestinationsSection from "@/components/home/DestinationsSection";
+import NeetRankSection from "@/components/home/NeetRankSection";
+import FeaturedColleges from "@/components/home/FeaturedColleges";
 import ProcessSection from "@/components/home/ProcessSection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
+import DualOfficeSection from "@/components/home/DualOfficeSection";
 import CTASection from "@/components/home/CTASection";
 import FAQPreview from "@/components/home/FAQPreview";
 
@@ -117,8 +121,12 @@ export default function Home() {
         </Suspense>
         <StatsSection />
         <OfferingsSection />
+        <DestinationsSection />
+        <NeetRankSection />
+        <FeaturedColleges />
         <ProcessSection />
         <TestimonialsSection />
+        <DualOfficeSection />
         <BlogTeaser />
         <CTASection />
         <FAQPreview />

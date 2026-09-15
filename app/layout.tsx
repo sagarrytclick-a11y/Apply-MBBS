@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import { PopupProvider } from "@/contexts/PopupContext";
+import { NeetSaathiProvider } from "@/contexts/NeetSaathiContext";
 import LayoutWrapper from "@/components/LayoutWrapper";
 import { SITE_IDENTITY } from "@/app/config/site_identity";
 import { absoluteUrl, jsonLdScript } from "@/lib/seo";
@@ -236,7 +237,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: jsonLdScript(websiteJsonLd) }}
         />
         <PopupProvider>
-          <LayoutWrapper>{children}</LayoutWrapper>
+          <NeetSaathiProvider>
+            <LayoutWrapper>{children}</LayoutWrapper>
+          </NeetSaathiProvider>
         </PopupProvider>
       </body>
     </html>
