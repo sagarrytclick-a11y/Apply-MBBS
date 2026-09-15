@@ -193,7 +193,7 @@ const MbbsIndiaPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="sticky top-[6.5rem] z-30 mb-6 space-y-3 rounded-[16px] border border-border bg-white/95 p-3 shadow-[0_8px_28px_rgba(15,23,42,0.06)] backdrop-blur-md sm:p-4">
+          <div className="mb-6 space-y-3 rounded-[16px] border border-border bg-white p-3 shadow-[0_8px_28px_rgba(15,23,42,0.06)] sm:p-4">
             <div className="flex flex-wrap gap-2">
               {(
                 [
