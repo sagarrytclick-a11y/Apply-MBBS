@@ -1,0 +1,1117 @@
+{
+  "states": [
+    {
+      "id": 1,
+      "name": "Uttar Pradesh",
+      "slug": "up",
+      "image": "https://i.pinimg.com/736x/07/f4/ab/07f4ab0f8d622bbedd6817994e3f1847.jpg",
+      "description": "Premier Hub for MD/MS in India with over 4300+ PG seats across Government and Private Institutions.",
+      "colleges": [
+        {
+          "id": 2001,
+          "name": "King George's Medical University (KGMU)",
+          "city": "Lucknow",
+          "fees": "₹1,08,000 per year",
+          "seats": 353,
+          "recognition": "NMC",
+          "ranking": "#28 in India (Medical)",
+          "type": "Government",
+          "image": "https://medicaldialogues.in/h-upload/2020/03/23/125794-kgmu.jpg",
+          "admissionProcess": "Admission via NEET PG score followed by UP State NEET PG / MCC All India Counselling.",
+          "placements": "Graduates secure senior residency and clinical roles in top healthcare systems.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Massive clinical caseload",
+            "4500-bedded extensive legacy teaching hospital"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹1,08,000 per year",
+            "hostelFee": "₹3,000 per month approx",
+            "otherFees": "Enrollment and examination charges extra"
+          },
+          "documentsRequired": [
+            "NEET PG Admit Card",
+            "NEET PG Scorecard",
+            "MBBS Degree",
+            "NMC Registration"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹8 LPA",
+            "medianSalaryPG": "₹15 LPA",
+            "internshipStipend": "₹86,000 per month",
+            "topRecruiters": [
+              "Medanta",
+              "Apollo Hospitals",
+              "Max Healthcare"
+            ]
+          },
+          "nriFees": "NOT AVAILABLE"
+        },
+        {
+          "id": 2002,
+          "name": "Institute of Medical Sciences, BHU",
+          "city": "Varanasi",
+          "fees": "₹45,000 per year",
+          "seats": 188,
+          "recognition": "NMC",
+          "ranking": "Top 10 in India",
+          "type": "Government",
+          "image": "https://ik.imagekit.io/syustaging/SYU_PREPROD/Cover_bWtMA60-rb.webp",
+          "admissionProcess": "Conducted centrally via Medical Counselling Committee (MCC) based on NEET PG ranks.",
+          "placements": "High selection rate into DM/MCh superspecialty courses across premium national grids.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "50% Internal Institutional PG quota benefit for its own MBBS graduates",
+            "Premier tier-3 referral center for Eastern India"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹15,000 per year",
+            "hostelFee": "₹5,375 per year",
+            "otherFees": "₹24,625 University amenity development fees"
+          },
+          "documentsRequired": [
+            "NEET PG Scorecard",
+            "Allotment Letter",
+            "MBBS Marksheets",
+            "NMC State Registration"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹15 LPA",
+            "medianSalaryPG": "₹21 LPA",
+            "internshipStipend": "₹92,000 per month",
+            "topRecruiters": [
+              "AIIMS",
+              "Fortis Healthcare",
+              "Govt Medical Colleges"
+            ]
+          },
+          "nriFees": "NOT AVAILABLE"
+        },
+        {
+          "id": 2003,
+          "name": "Dr. Ram Manohar Lohia Institute of Medical Sciences (RMLIMS)",
+          "city": "Lucknow",
+          "fees": "₹74,100 per year",
+          "seats": 99,
+          "recognition": "NMC",
+          "ranking": "Top 5 in Uttar Pradesh",
+          "type": "Government",
+          "image": "https://pub-3bd144a409f940998afd367af1dcde44.r2.dev/migrated/colleges/1765992304725-fe1b0d6f-xo0qsfw9otkwnvqmbeqm.jpg",
+          "admissionProcess": "State quota counseling via DGME UP & All India Quota through MCC based on NEET PG score.",
+          "placements": "Excellent domestic networks across high-end medical setups and diagnostic chains.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Rapidly growing super-specialty baseline architecture",
+            "Premium urban patient demographic stream"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹74,100 per year",
+            "hostelFee": "₹12,000 per year",
+            "otherFees": "₹15,000 refundable security caution cash"
+          },
+          "documentsRequired": [
+            "NEET PG Scorecard",
+            "MBBS Provisional Certificate",
+            "UP Provisional Registration ID"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹9 LPA",
+            "medianSalaryPG": "₹16 LPA",
+            "internshipStipend": "₹86,000 per month",
+            "topRecruiters": [
+              "Max Healthcare",
+              "Apollo",
+              "RMLIMS Hospital network"
+            ]
+          },
+          "nriFees": "NOT AVAILABLE"
+        },
+        {
+          "id": 2004,
+          "name": "Ganesh Shankar Vidyarthi Memorial Medical College (GSVM)",
+          "city": "Kanpur",
+          "fees": "₹1,02,000 per year",
+          "seats": 136,
+          "recognition": "NMC",
+          "ranking": "Top 30 in India",
+          "type": "Government",
+          "image": "https://gsvmmedicalcollege.com/wp-content/uploads/2023/11/573A5204-scaled.jpg",
+          "admissionProcess": "Allocation through NEET PG score matrix via state counseling (85%) and AIQ counseling (15%).",
+          "placements": "Graduates are highly preferred in large public hospitals and emergency health systems.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Associated with LLR Hospital, the largest health hub in Kanpur division",
+            "Strong academic foundation with intense clinical exposure"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹36,000 per year",
+            "hostelFee": "Included in institutional baseline charges",
+            "otherFees": "₹66,000 development, labs, and examination structure metrics"
+          },
+          "documentsRequired": [
+            "NEET PG Admit Card",
+            "MBBS Internship Certificate",
+            "Caste Certificate if applicable"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹7.5 LPA",
+            "medianSalaryPG": "₹14 LPA",
+            "internshipStipend": "₹86,000 per month",
+            "topRecruiters": [
+              "Fortis",
+              "Sir Ganga Ram Hospital",
+              "State Health Services"
+            ]
+          },
+          "nriFees": "NOT AVAILABLE"
+        },
+        {
+          "id": 2005,
+          "name": "Motilal Nehru Medical College (MLNMC)",
+          "city": "Prayagraj",
+          "fees": "₹90,000 per year",
+          "seats": 168,
+          "recognition": "NMC",
+          "ranking": "Top 40 in India",
+          "type": "Government",
+          "image": "https://www.edufever.com/wp-content/uploads/2021/12/Moti-Lal-Nehru-Medical-College-Allahabad-1.webp",
+          "admissionProcess": "Merit-driven allocation process based entirely on competitive scores achieved in NEET PG exam.",
+          "placements": "Seamless transitions into government healthcare frameworks and private multi-specialty setups.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Connected with Swaroop Rani Nehru Hospital",
+            "Vast emergency, trauma, and maternal healthcare workload metrics"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹36,000 per year",
+            "hostelFee": "₹18,000 per year",
+            "otherFees": "₹36,000 university registration, administrative costs, and sports fund allocations"
+          },
+          "documentsRequired": [
+            "NEET PG Registration Receipt",
+            "MBBS Degree Portfolios",
+            "State Medical Council Code Verification"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹8 LPA",
+            "medianSalaryPG": "₹14.5 LPA",
+            "internshipStipend": "₹86,000 per month",
+            "topRecruiters": [
+              "Medanta Lucknow",
+              "Max Hospitals",
+              "UP Provincial Medical Services"
+            ]
+          },
+          "nriFees": "NOT AVAILABLE"
+        },
+        {
+          "id": 2006,
+          "name": "School of Medical Sciences & Research (Sharda University)",
+          "city": "Greater Noida",
+          "fees": "₹25,40,649 per year",
+          "seats": 110,
+          "recognition": "NMC",
+          "ranking": "Top Private Medical Institute in North India",
+          "type": "Private",
+          "image": "https://image-static.collegedunia.com/public/college_data/images/appImage/1496657473madicalbanner3980x408.jpg",
+          "admissionProcess": "UP State DGME NEET PG centralized open category counseling strictly based on merit ranks.",
+          "placements": "High-end corporate placement index across modern industrial healthcare networks and global fellowships.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Delhi NCR patient proximity benefit matrix",
+            "Premium ultra-modern diagnostic infrastructure and research labs"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹25,40,649 per year (Clinical branches)",
+            "hostelFee": "₹3,000,000 per year (Mandatory AC single occupancy scale with mess)",
+            "otherFees": "₹1,41,240 annual miscellaneous + ₹5,00,000 one-time refundable caution deposit"
+          },
+          "documentsRequired": [
+            "NEET PG Rank Card",
+            "Allotment Letter from DGME",
+            "MBBS Marksheet Portfolio",
+            "Security Deposit Draft"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹6.5 LPA",
+            "medianSalaryPG": "₹15.6 LPA",
+            "internshipStipend": "₹40,000 per month",
+            "topRecruiters": [
+              "Sharda Hospital Network",
+              "Max Healthcare",
+              "Fortis",
+              "Artemis Hospitals"
+            ]
+          },
+          "nriFees": "$35,000 per year"
+        },
+        {
+          "id": 2007,
+          "name": "Shri Ram Murti Smarak Institute of Medical Sciences (SRMS)",
+          "city": "Bareilly",
+          "fees": "₹25,09,957 per year",
+          "seats": 95,
+          "recognition": "NMC",
+          "ranking": "Highly Rated Private Medical College in UP",
+          "type": "Private",
+          "image": "https://ik.imagekit.io/syustaging/SYU_PREPROD/Campus-Image_z-M-j5c-l.webp?tr=w-3840",
+          "admissionProcess": "Admissions through UP State dynamic counseling administered via DGME website based on NEET PG ranks.",
+          "placements": "Excellent recognition in corporate healthcare ecosystems; alumni tracking indicates high corporate retention rates.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Extremely disciplined environment with intense strict clinical benchmarks",
+            "Massive tertiary caseload capacity serving Rohilkhand and Western UP geography"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹25,09,957 per year (Clinical), ₹13,51,477 (Pathology)",
+            "hostelFee": "₹2,50,000 to ₹3,000,000 per year basic structure matrix",
+            "otherFees": "₹1,41,240 annual university development fund allocation + ₹5,00,000 caution money"
+          },
+          "documentsRequired": [
+            "NEET PG Verification Docket",
+            "MBBS Final Degree",
+            "Compulsory Rotatory Internship Certificate"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹7 LPA",
+            "medianSalaryPG": "₹16.2 LPA",
+            "internshipStipend": "₹45,000 per month",
+            "topRecruiters": [
+              "SRMS Hospital Hubs",
+              "Medanta The Medicity",
+              "Apollo Healthcare Groups"
+            ]
+          },
+          "nriFees": "$35,000 per year"
+        },
+        {
+          "id": 2008,
+          "name": "Subharti Medical College (SVSU)",
+          "city": "Meerut",
+          "fees": "₹14,43,744 per year",
+          "seats": 115,
+          "recognition": "NMC",
+          "ranking": "Top 3 Private Institutes with Economical Fee Matrix in UP",
+          "type": "Private",
+          "image": "https://mdmsenquiry.com/wp-content/uploads/2018/07/slider1.jpg",
+          "admissionProcess": "Strictly merit-driven matrix mapping through open state counseling via UP DGME NEET PG rankings.",
+          "placements": "Excellent clinical practice opportunities across Western UP and corporate hospitals in Delhi NCR.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "1000+ Bed Chhatrapati Shivaji Subharti Hospital linkage metrics",
+            "Most competitive cut-off lines among private medical institutes due to highly subsidized fee profile"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹14,43,744 per year (Clinical), ₹10,80,000 (Pathology)",
+            "hostelFee": "₹2,00,000 per year standard allocation non-AC option scale",
+            "otherFees": "₹1,41,240 miscellaneous university expenses + ₹5,00,000 caution lock-in money"
+          },
+          "documentsRequired": [
+            "NEET PG Score Document",
+            "DGME Allotment Ticket",
+            "NMC Initial Permanent Registration Card"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹6 LPA",
+            "medianSalaryPG": "₹13 LPA",
+            "internshipStipend": "₹35,000 per month",
+            "topRecruiters": [
+              "Subharti Healthcare Units",
+              "Metro Hospitals Meerut",
+              "Fortis Noida"
+            ]
+          },
+          "nriFees": "$35,000 per year"
+        },
+        {
+          "id": 2009,
+          "name": "Hind Institute of Medical Sciences (HIMS)",
+          "city": "Barabanki",
+          "fees": "₹25,24,901 per year",
+          "seats": 90,
+          "recognition": "NMC",
+          "ranking": "Top Tier Private Clinical Exposure Hub",
+          "type": "Private",
+          "image": "https://marquecareer.com/wp-content/uploads/2023/08/himss.webp",
+          "admissionProcess": "State centralized quota counseling management administered through dynamic state platforms via NEET PG merits.",
+          "placements": "High-tier demand for clinical professionals in Lucknow division's premier healthcare facilities.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Heavy daily clinical OPD traffic flow metrics",
+            "Renowned across state for highly rigorous internal medical practical drills"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹25,24,901 per year (Clinical), ₹13,59,562 (Pathology)",
+            "hostelFee": "₹3,00,000 per year standard inclusion",
+            "otherFees": "₹1,41,240 institutional structural process fees + ₹5,00,000 caution deposit registry"
+          },
+          "documentsRequired": [
+            "NEET PG Rank Card",
+            "MBBS Degree Credentials",
+            "Provisional State Verification Stamp Documentation"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹6.8 LPA",
+            "medianSalaryPG": "₹14.8 LPA",
+            "internshipStipend": "₹40,000 per month",
+            "topRecruiters": [
+              "Hind Hospital Ecosystem",
+              "Sahara Hospital",
+              "Apollo Medics Lucknow"
+            ]
+          },
+          "nriFees": "$35,000 per year"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Karnataka",
+      "slug": "karnataka",
+      "image": "https://i.pinimg.com/736x/5f/ac/f6/5facf668361bc29a4893363f8c0dc7e6.jpg",
+      "description": "The medical education capital of India with top-tier Deemed and Private PG medical colleges.",
+      "colleges": [
+        {
+          "id": 3001,
+          "name": "Bangalore Medical College and Research Institute (BMCRI)",
+          "city": "Bengaluru",
+          "fees": "₹1,14,000 per year",
+          "seats": 200,
+          "recognition": "NMC",
+          "ranking": "Top 15 in India",
+          "type": "Government",
+          "image": "https://dfhe5ze0n4pxu.cloudfront.net/College/Image/Image-1769674662016.png",
+          "admissionProcess": "Admission via NEET PG national merit rank followed by KEA state centralized or MCC all-India counselling.",
+          "placements": "Graduates secure premier senior residency tracks, central institute research roles, and highly competitive corporate setups.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Massive healthcare traffic footprint across Victoria, Vani Vilas, and Bowring hospitals",
+            "Premier state-run post-graduate clinical training destination in Karnataka"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹1,14,000 per year (Clinical standard rate)",
+            "hostelFee": "₹24,000 to ₹40,000 per year",
+            "otherFees": "KEA university registration, lab operational fees, and examination metrics extra"
+          },
+          "documentsRequired": [
+            "NEET PG Scorecard",
+            "KEA Seat Allotment Letter",
+            "MBBS Degree & Transcript",
+            "KMC Permanent Registration Certificate"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹10 LPA",
+            "medianSalaryPG": "₹16.5 LPA",
+            "internshipStipend": "₹45,000 to ₹55,000 per month standard JR scale",
+            "topRecruiters": [
+              "Apollo Hospitals",
+              "Fortis Healthcare",
+              "Narayana Health",
+              "Manipal Health Systems"
+            ]
+          },
+          "nriFees": "NOT AVAILABLE"
+        },
+        {
+          "id": 3002,
+          "name": "Kasturba Medical College (KMC)",
+          "city": "Manipal",
+          "fees": "₹18,00,000 to ₹34,00,000 per year",
+          "seats": 222,
+          "recognition": "NMC",
+          "ranking": "#10 in India (NIRF Medical)",
+          "type": "Deemed University",
+          "image": "https://www.edufever.com/wp-content/uploads/2021/12/Kasturba-Medical-College-Manipal-1.webp",
+          "admissionProcess": "Allocated centrally via the Medical Counselling Committee (MCC) based on strict NEET PG All India Quota competitive rank matching.",
+          "placements": "Exceptional trajectory with strong global network retention and extensive choices in domestic healthcare setups.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "World-class state-of-the-art simulation labs and infrastructure tech stacks",
+            "Highly valued institutional reputation globally with international healthcare linkage matrix Systems"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹18,00,000 to ₹34,00,000 per year (Varies widely depending on Clinical specialties like Radio/Derma vs Non-Clinical)",
+            "hostelFee": "₹1,20,000 to ₹2,50,000 per year depending on room tier configuration chosen",
+            "otherFees": "One-time refundable caution money, laboratory equipment fund, and multi-facility utilities structure charges"
+          },
+          "documentsRequired": [
+            "NEET PG Marksheet",
+            "MCC Online Registration Proof",
+            "MBBS Provisional Degree Certificate",
+            "NMC Verification Portfolio Document"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹8.8 LPA",
+            "medianSalaryPG": "₹15.8 LPA",
+            "internshipStipend": "₹45,000 per month standard PG residency stipend matrix",
+            "topRecruiters": [
+              "Manipal Hospital Network",
+              "Max Healthcare",
+              "Medanta Systems",
+              "Global Clinical Fellowships"
+            ]
+          },
+          "nriFees": "₹1,780,000 per year"
+        },
+        {
+          "id": 3003,
+          "name": "St. John's Medical College",
+          "city": "Bengaluru",
+          "fees": "₹7,83,108 per year",
+          "seats": 131,
+          "recognition": "NMC",
+          "ranking": "#30 in India (NIRF Medical)",
+          "type": "Private (Merit/Govt Quota)",
+          "image": "https://admissionuniverse.in/img/st.jpg",
+          "admissionProcess": "Admission matching via Karnataka Examinations Authority (KEA) centralized merit counselling mapping strictly onto competitive NEET PG ranks.",
+          "placements": "Highly coveted clinical skill profile graduates who secure outstanding fellowships, hospital residencies, and corporate executive medical positions.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Legendary ethics-driven teaching methodology with immense diagnostic exposure",
+            "Premium urban referral center hub with top-tier international and national standard operations"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹7,83,108 per year (Govt Quota/Institutional Merit), Management Quota varies based on category",
+            "hostelFee": "₹50,000 to ₹90,000 per year with optional single room metrics",
+            "otherFees": "₹1,20,000 multi-facility infrastructure usage fees, university athletic funds, and lab insurance structures"
+          },
+          "documentsRequired": [
+            "NEET PG Admit Passport Token",
+            "KEA Online Allotment Order",
+            "MBBS Transcript Record Sheets",
+            "State Medical Registration Code"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹9 LPA",
+            "medianSalaryPG": "₹13.5 LPA",
+            "internshipStipend": "₹40,000 to ₹50,000 per month standard range",
+            "topRecruiters": [
+              "St. John's Multi-specialty Grid",
+              "Fortis Hospital Networks",
+              "Columbia Asia Labs",
+              "Max Healthcare Group Systems"
+            ]
+          },
+          "nriFees": "NOT AVAILABLE"
+        },
+        {
+          "id": 3004,
+          "name": "Mysore Medical College and Research Institute (MMCRI)",
+          "city": "Mysuru",
+          "fees": "₹1,20,000 per year",
+          "seats": 153,
+          "recognition": "NMC",
+          "ranking": "Top 5 Government Colleges in Karnataka",
+          "type": "Government",
+          "image": "https://thecollegesphere.com/wp-content/uploads/2025/09/mmcri-mysore.webp",
+          "admissionProcess": "Allocation entirely based on competitive scoring in NEET PG through KEA state management (50%) and AIQ (50%) structures.",
+          "placements": "Immediate transitions into large-scale state health grids, multi-specialty clinical operations, and public sector teaching paths.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "One of the oldest historic legacy institutes in the state with immense cultural clinical history",
+            "High independent patient caseload loop matrix tracking diverse medical pathologies"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹1,20,000 per year standard tier",
+            "hostelFee": "Included / Nominal nominal rate structure mapping around ₹15,000-₹30,000 per year",
+            "otherFees": "₹25,000 administrative processing costs, university technical portal handling fees"
+          },
+          "documentsRequired": [
+            "NEET PG Ranked Verification Slip",
+            "MBBS Completed Core Internship Certificate",
+            "Domicile Certificate if claiming reservation matrix",
+            "NMC Identity Registration Profile"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹7.5 LPA",
+            "medianSalaryPG": "₹14 LPA",
+            "internshipStipend": "₹45,000 to ₹52,000 per month standard state grid scale",
+            "topRecruiters": [
+              "Karnataka Health Services Grid",
+              "Apollo Clinics",
+              "JSS Hospital Infrastructure Networks"
+            ]
+          },
+          "nriFees": "NOT AVAILABLE"
+        },
+        {
+          "id": 3005,
+          "name": "M.S. Ramaiah Medical College",
+          "city": "Bengaluru",
+          "fees": "₹3,84,000 to ₹13,87,994 per year",
+          "seats": 120,
+          "recognition": "NMC",
+          "ranking": "#50 in India (NIRF Medical)",
+          "type": "Private",
+          "image": "https://careerpaathshala.com/wp-content/uploads/2023/07/1-33.jpg",
+          "admissionProcess": "Counselling and placement matrix matching orchestrated online through KEA portal relying completely on NEET PG scoring benchmarks.",
+          "placements": "Highly robust domestic placement pipelines spanning premium diagnostic architectures, corporate clinics, and private super-specialty grids.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Premium location in Bengaluru city optimizing massive patient flow and diverse clinical data",
+            "Advanced research center integration and super-specialty department coordination workflows"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹3,84,000 (Govt Merit Quota) up to ₹13,87,994 (Private Open Quota per year for high demand specialties)",
+            "hostelFee": "₹1,50,000 to ₹2,20,000 annually with full dining and automated amenities packages",
+            "otherFees": "₹1,10,000 university development structural charges, library asset subscriptions, and safety security deposits"
+          },
+          "documentsRequired": [
+            "NEET PG Scorecard Blueprint",
+            "KEA Allotment Verification Token",
+            "MBBS Final Passing Certificate",
+            "Karnataka Medical Council Code Verification"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹7 LPA",
+            "medianSalaryPG": "₹12.5 LPA",
+            "internshipStipend": "₹35,000 to ₹45,000 per month standard operational scale",
+            "topRecruiters": [
+              "Ramaiah Memorial Hospital Units",
+              "Manipal Health Group Centers",
+              "Cloudnine Hospitals",
+              "Aster CMI Grid Systems"
+            ]
+          },
+          "nriFees": "₹25,00,000 per year"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Haryana",
+      "slug": "haryana",
+      "image": "https://cdn.britannica.com/53/176353-050-5B854179/Harmandir-Sahib-Amritsar-Punjab-India.jpg",
+      "description": "Rising hub for medical PG with state-of-the-art infrastructure and clinical exposure.",
+      "colleges": [
+        {
+          "id": 4001,
+          "name": "Pt. B.D. Sharma Post Graduate Institute of Medical Sciences (PGIMS)",
+          "city": "Rohtak",
+          "fees": "₹1,25,000 per year",
+          "seats": 250,
+          "recognition": "NMC",
+          "ranking": "Top Government Medical Institute in Haryana",
+          "type": "Government",
+          "image": "https://rmgoe.org/universities/India/images/1751178137_6860db99e2044.png",
+          "admissionProcess": "Admission via NEET PG national rank followed by DMER Haryana state centralized counseling (50%) and MCC All India counseling (50%).",
+          "placements": "Excellent transitions into major public healthcare networks, central clinical institutions, and top-tier private corporate grids.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Apex tertiary care hospital facility across Haryana",
+            "Massive daily clinical caseload with intense practical rotational shifts"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹1,25,000 per year standard government rate",
+            "hostelFee": "₹25,000 to ₹35,000 per year depending on accommodation allocation",
+            "otherFees": "University administrative expenses, lab setup modules, and examination fees extra"
+          },
+          "documentsRequired": [
+            "NEET PG Scorecard",
+            "DMER Haryana Allotment Receipt",
+            "MBBS Degree & Final Transcript Portfolio",
+            "State Medical Council Registration Code"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹9 LPA",
+            "medianSalaryPG": "₹16 LPA to ₹18 LPA",
+            "internshipStipend": "₹1,00,980 per month for First-Year Junior Residents",
+            "topRecruiters": [
+              "Medanta - The Medicity",
+              "Fortis Healthcare",
+              "Max Hospital",
+              "Govt Health System Networks"
+            ]
+          },
+          "nriFees": "NOT AVAILABLE"
+        },
+        {
+          "id": 4002,
+          "name": "Maharishi Markandeshwar Institute of Medical Sciences & Research (MMIMSR)",
+          "city": "Mullana, Ambala",
+          "fees": "₹14,02,000 to ₹33,00,000 per year",
+          "seats": 200,
+          "recognition": "NMC",
+          "ranking": "Top Private / Deemed Medical Destination in Haryana",
+          "type": "Deemed University",
+          "image": "https://careermantra.org/front_assets/images/Maharishi_Markandeshwar_Institute_of_Medical_Sciences_and_Research.jpg",
+          "admissionProcess": "Allocated centrally through the Medical Counselling Committee (MCC) based entirely on competitive ranks achieved in NEET PG.",
+          "placements": "Highly robust domestic placement pipeline across advanced corporate hospitals in Delhi NCR and global residency platforms.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "1000+ Bedded multi-specialty teaching hospital matrix",
+            "Advanced technical simulation infrastructure setups and corporate collaboration tracks"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹14,02,000 (Non-Clinical/Pathology) to ₹33,00,000 per year (High-demand Clinical specialities like Radio/Dermatology)",
+            "hostelFee": "₹1,00,000 to ₹1,50,000 per year with single AC options",
+            "otherFees": "₹50,000 refundable caution check + ₹25,000 university registration processing structural charges"
+          },
+          "documentsRequired": [
+            "NEET PG Allotment Letter",
+            "MBBS Transcript Record Sheets",
+            "Provisional State Verification Stamp",
+            "Identity Proof Portfolios"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹7.8 LPA",
+            "medianSalaryPG": "₹14.5 LPA",
+            "internshipStipend": "₹45,000 per month standard PG residency stipend scale",
+            "topRecruiters": [
+              "Apollo Clinics",
+              "Max Healthcare Group Systems",
+              "Artemis Hospitals",
+              "Fortis Gurgaon"
+            ]
+          },
+          "nriFees": "$45,000 per year"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Madhya Pradesh",
+      "slug": "madhya-pradesh",
+      "image": "https://i.pinimg.com/736x/92/3a/c0/923ac067cd2e8f542190a04a80557737.jpg",
+      "description": "Centrally located state offering diverse clinical experience in MD and MS specializations.",
+      "colleges": [
+        {
+          "id": 5001,
+          "name": "Mahatma Gandhi Memorial Medical College (MGMMC)",
+          "city": "Indore",
+          "fees": "₹1,00,000 per year",
+          "seats": 185,
+          "recognition": "NMC",
+          "ranking": "#1 Medical Institute in Madhya Pradesh",
+          "type": "Government",
+          "image": "https://mdmsenquiry.com/wp-content/uploads/2023/06/Mahatma-Gandhi-Memorial-Medical-College-Indore.jpg",
+          "admissionProcess": "State quota allocation managed via Directorate of Medical Education (DME) MP along with All India Counseling through MCC.",
+          "placements": "Outstanding recruitment trends into elite super-specialty fellowships (DM/MCh) and major central healthcare setups.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Associated with MY Hospital, the highest-volume tertiary hub in central India",
+            "Highly competitive cut-off benchmarks among government colleges in MP"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹1,00,000 per year baseline academic fee",
+            "hostelFee": "₹12,000 to ₹18,000 per year (Nominal standard scale)",
+            "otherFees": "₹15,000 library, student welfare, and university tech-portal processing modules"
+          },
+          "documentsRequired": [
+            "NEET PG Rank Card",
+            "MP State Merit Allotment Sheet",
+            "MBBS Degree Certificate",
+            "NMC/MP Medical Council Registration"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹11 LPA",
+            "medianSalaryPG": "₹18 LPA",
+            "internshipStipend": "₹69,000 to ₹75,000 per month dynamic resident scale",
+            "topRecruiters": [
+              "AIIMS Networks",
+              "Chirayu Group",
+              "Apollo Rajshree Hospital",
+              "State Medical Services"
+            ]
+          },
+          "nriFees": "NOT AVAILABLE"
+        },
+        {
+          "id": 5002,
+          "name": "Gandhi Medical College (GMC)",
+          "city": "Bhopal",
+          "fees": "₹1,00,000 per year",
+          "seats": 160,
+          "recognition": "NMC",
+          "ranking": "Top 3 Premier Institutes in Madhya Pradesh",
+          "type": "Government",
+          "image": "https://mbbscouncilcdn.s3.amazonaws.com/wp-content/uploads/2017/04/Gandhi-Medical-College-Bhopal-Madhya-Pradesh.jpg",
+          "admissionProcess": "Merit-driven allocation process administered via competitive scores through MP State DME counseling framework matrix.",
+          "placements": "Seamless integration into government public health structures and regional private multi-specialty corporate grids.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Associated with Hamidia Hospital with a massive patient footprint across central MP",
+            "Strong legacy academic foundation with micro-focused clinical case analysis workflows"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹1,00,000 per year standard rate",
+            "hostelFee": "₹15,000 per year approx (Optional accommodation format)",
+            "otherFees": "₹10,000 student dynamic infrastructure funds and exam evaluation processing"
+          },
+          "documentsRequired": [
+            "NEET PG Marksheet",
+            "MP Online Registration Receipt",
+            "MBBS Compulsory Rotatory Internship Ticket",
+            "Category Verification Certificate if applicable"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹9.5 LPA",
+            "medianSalaryPG": "₹15.8 LPA",
+            "internshipStipend": "₹69,000 to ₹75,000 per month standard JR matrix",
+            "topRecruiters": [
+              "Bhopal Memorial Hospital Network",
+              "Medanta Systems Indore",
+              "Fortis",
+              "Govt Teaching Cadres"
+            ]
+          },
+          "nriFees": "NOT AVAILABLE"
+        },
+        {
+          "id": 5003,
+          "name": "Sri Aurobindo Institute of Medical Sciences (SAIMS)",
+          "city": "Indore",
+          "fees": "₹14,40,000 to ₹23,10,000 per year",
+          "seats": 142,
+          "recognition": "NMC",
+          "ranking": "Top Rated Private Medical Infrastructure Hub in MP",
+          "type": "Private",
+          "image": "https://shikshamed.com/wp-content/uploads/2025/05/aurobindo-Medical-College-and-Post-Graduate-Institute.png",
+          "admissionProcess": "Centralized open counseling administered by Directorate of Medical Education (DME) MP strictly mapping to NEET PG merits.",
+          "placements": "Excellent corporate clinical practice matching within the Malwa region and major corporate diagnostic layouts.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Vast super-specialty transplant infrastructure and robotic surgical training environments",
+            "Highest seat capacity configuration matrix among private entities in MP"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹14,40,000 (Pathology/Basic Clinical) up to ₹23,10,000 per year (High clinical specialities like Dermatology/Radio Diagnosis)",
+            "hostelFee": "₹2,00,000 to ₹2,50,000 per year with dining inclusions",
+            "otherFees": "₹1,00,000 institutional multi-facility support charges + ₹5,00,000 state-mandated one-time security deposit"
+          },
+          "documentsRequired": [
+            "NEET PG Verification Docket",
+            "DME Allotment Copy",
+            "NMC Permanent/Provisional ID Slip",
+            "Security Deposit Demand Draft"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹7 LPA",
+            "medianSalaryPG": "₹14.2 LPA",
+            "internshipStipend": "₹40,000 per month clinical resident compensation",
+            "topRecruiters": [
+              "SAIMS Hospital Complex",
+              "Choithram Hospital",
+              "Bombay Hospital Indore",
+              "Max Healthcare"
+            ]
+          },
+          "nriFees": "₹52,20,000 per year"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Maharashtra",
+      "slug": "maharashtra",
+      "image": "https://i.pinimg.com/1200x/70/36/54/70365403748b0f2d8160647ad15a945f.jpg",
+      "description": "Highest number of medical PG seats in India with world-class hospital training.",
+      "colleges": [
+        {
+          "id": 6001,
+          "name": "Grant Medical College & Sir J.J. Group of Hospitals",
+          "city": "Mumbai",
+          "fees": "₹1,38,300 per year",
+          "seats": 307,
+          "recognition": "NMC",
+          "ranking": "Top 10 in India (Government)",
+          "type": "Government",
+          "image": "https://ik.imagekit.io/syustaging/SYU_PREPROD/Cover_Jffamq4qqu.webp?tr=w-3840",
+          "admissionProcess": "Admission via NEET PG score matrix followed by State CET Cell Maharashtra CAP rounds or All India Quota via MCC.",
+          "placements": "Top-tier senior residencies, central institutional research, and major elite corporate healthcare setups globally.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Legendary 2844+ bedded active medical clinical group layout",
+            "Massive case complexity and highest clinical flow index in Mumbai region"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹1,38,300 per year standard rate",
+            "hostelFee": "₹4,000 to ₹12,000 per year nominal structural fee",
+            "otherFees": "₹25,000 library, gymkhana, caution money deposit, and tech handling charges"
+          },
+          "documentsRequired": [
+            "NEET PG Admit Card & Scorecard",
+            "MBBS Passing Certificate",
+            "MMC / NMC Permanent Registration Proof",
+            "Maharashtra Domicile Certificate"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹10 LPA",
+            "medianSalaryPG": "₹16.8 LPA",
+            "internshipStipend": "₹80,000 to ₹85,000 per month for Junior Residents",
+            "topRecruiters": [
+              "Hinduja Hospital",
+              "Kokilaben Dhirubhai Ambani Hospital",
+              "Fortis Health",
+              "Tata Memorial Center"
+            ]
+          },
+          "nriFees": "NOT AVAILABLE"
+        },
+        {
+          "id": 6002,
+          "name": "Seth Gordhandas Sunderdas Medical College & KEM Hospital (GSMC)",
+          "city": "Mumbai",
+          "fees": "₹1,57,828 per year",
+          "seats": 279,
+          "recognition": "NMC",
+          "ranking": "#12 in India (NIRF Medical)",
+          "type": "Government",
+          "image": "https://www.kem.edu/images/home-slide10.jpg",
+          "admissionProcess": "Allocated centrally based on NEET PG ranks via MCC (50% AIQ) and State CET Cell Maharashtra (50% State Quota).",
+          "placements": "Exceptional transitions into premium national fellowships and high-paying diagnostic consultant roles.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Premier multi-specialty research center with deep clinical integration",
+            "Elite status retention track record among competitive top rankers"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹1,57,828 per year baseline",
+            "hostelFee": "₹6,000 to ₹15,000 per year basic tier",
+            "otherFees": "₹18,000 development funds, library networks, and assessment procedures"
+          },
+          "documentsRequired": [
+            "NEET PG Rank Card",
+            "Internship Completion Certificate",
+            "Caste Validity / EWS Code if applicable",
+            "MBBS Final Marksheet Portfolio"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹12 LPA",
+            "medianSalaryPG": "₹18 LPA to ₹22 LPA",
+            "internshipStipend": "₹82,000 per month standard residency stipend",
+            "topRecruiters": [
+              "Max Healthcare",
+              "Apollo Group Clinics",
+              "Major Municipal Corporation Medical Units"
+            ]
+          },
+          "nriFees": "NOT AVAILABLE"
+        },
+        {
+          "id": 6003,
+          "name": "Dr. D.Y. Patil Medical College, Hospital & Research Centre",
+          "city": "Pimpri, Pune",
+          "fees": "₹27,50,000 per year",
+          "seats": 219,
+          "recognition": "NMC",
+          "ranking": "Top Private Deemed System in Western India",
+          "type": "Deemed University",
+          "image": "https://medical.dpu.edu.in/images/infrastructure/infrastructure-new/Infrastructure-01.jpg",
+          "admissionProcess": "100% centralized counseling via Medical Counselling Committee (MCC) based entirely on NEET PG AIQ merits.",
+          "placements": "Excellent domestic and corporate hospital integrations with vast global alumni network reach.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Ultra-modern diagnostic tech layers and robotic surgical units",
+            "Massive infrastructure setup across a 2000+ bed corporate-tier hospital layout"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹27,50,000 per year (Clinical fields like Radio/Derma up to ₹35L+; Non-Clinical fields lower)",
+            "hostelFee": "₹2,00,000 to ₹3,50,000 per year single AC with multi-amenity mess options",
+            "otherFees": "₹1,50,000 university registration processing, processing fee trackers, and security deposits"
+          },
+          "documentsRequired": [
+            "NEET PG Allotment Letter from MCC",
+            "MBBS Degree Credentials",
+            "NMC Verification Portfolio Doc",
+            "Caution Draft Lock Token"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹7.2 LPA",
+            "medianSalaryPG": "₹15 LPA",
+            "internshipStipend": "₹50,000 per month clinical resident compensation",
+            "topRecruiters": [
+              "Ruby Hall Clinic Pune",
+              "Manipal Hospital",
+              "Medanta Systems",
+              "D.Y. Patil Corporate Network"
+            ]
+          },
+          "nriFees": "$62,000 per year"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Tamil Nadu",
+      "slug": "tamil-nadu",
+      "image": "https://i.pinimg.com/1200x/43/b9/34/43b9346bf4225560ba4625309c32cf80.jpg",
+      "description": "Excellence in healthcare and surgery with some of the oldest medical institutions in Asia.",
+      "colleges": [
+        {
+          "id": 7001,
+          "name": "Madras Medical College (MMC)",
+          "city": "Chennai",
+          "fees": "₹50,000 per year",
+          "seats": 240,
+          "recognition": "NMC",
+          "ranking": "#10 in India (NIRF Medical)",
+          "type": "Government",
+          "image": "https://i.ytimg.com/vi/AZ6BHMOPlEg/maxresdefault.jpg",
+          "admissionProcess": "Allocation strictly through merit rank in NEET PG via TN Selection Committee (50% State Quota) and MCC (50% AIQ).",
+          "placements": "Highly sought-after clinical profiles across premium national super-specialty tracks (DM/MCh) and academic roles.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Associated with Rajiv Gandhi Government General Hospital, over 3500+ beds",
+            "One of the absolute oldest and most prestigious clinical training hubs in Asia"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹40,000 per year standard rate",
+            "hostelFee": "Nominal tracking around ₹10,000 per year approx",
+            "otherFees": "₹10,000 dynamic special development fees and university administrative tracking charges"
+          },
+          "documentsRequired": [
+            "NEET PG Scorecard Blueprint",
+            "TN Selection Committee Allotment Copy",
+            "MBBS Transcript Portfolios",
+            "Tamil Nadu Medical Council Code Verification"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹12 LPA",
+            "medianSalaryPG": "₹16.5 LPA to ₹20 LPA",
+            "internshipStipend": "₹54,025 to ₹56,275 per month based on residency year progression",
+            "topRecruiters": [
+              "Apollo Hospitals Chennai",
+              "MGM Healthcare",
+              "Fortis Malar",
+              "State Teaching Cadres"
+            ]
+          },
+          "nriFees": "NOT AVAILABLE"
+        },
+        {
+          "id": 7002,
+          "name": "Christian Medical College (CMC)",
+          "city": "Vellore",
+          "fees": "₹2,50,000 per year",
+          "seats": 180,
+          "recognition": "NMC",
+          "ranking": "#3 in India (NIRF Medical)",
+          "type": "Private (Minority/Aided Trust)",
+          "image": "https://www.cmcludhiana.in/wp-content/uploads/2024/06/CMC-HOSPITAL_LUDHIANA.webp",
+          "admissionProcess": "Counselling managed via TN Selection Committee mapping 50% open merit pool and minority allocations using strict NEET PG ranks.",
+          "placements": "World-renowned research networks, immediate prestigious corporate alignments, and top international global research groups.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Unmatched ethics-centric healthcare architecture and research tracking models",
+            "Advanced multi-facility clinical research programs and intense pathology caseload cross-flows"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹2,50,000 per year average across basic clinical frameworks",
+            "hostelFee": "₹50,000 to ₹80,000 per year with specific dining formats",
+            "otherFees": "₹30,000 university asset allocations, equipment logs, and safety insurance registries"
+          },
+          "documentsRequired": [
+            "NEET PG Hall Ticket",
+            "Online Merit Selection Verification Proof",
+            "MBBS Core Degree Dossier",
+            "NMC Registry Identification Data"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹10.5 LPA",
+            "medianSalaryPG": "₹15 LPA to ₹24 LPA",
+            "internshipStipend": "₹45,000 to ₹50,000 per month standard range",
+            "topRecruiters": [
+              "CMC Vellore Hospital Grid",
+              "St. John's Medical Systems",
+              "Max Group Platforms",
+              "Global Clinical Fellowships"
+            ]
+          },
+          "nriFees": "₹2,700,000 per year"
+        },
+        {
+          "id": 7003,
+          "name": "PSG Institute of Medical Sciences and Research (PSGIMSR)",
+          "city": "Coimbatore",
+          "fees": "₹14,50,000 per year",
+          "seats": 115,
+          "recognition": "NMC",
+          "ranking": "#41 in India (NIRF Medical)",
+          "type": "Private (Self-Financing)",
+          "image": "https://mbbscouncilcdn.s3.ap-south-1.amazonaws.com/wp-content/uploads/2018/09/PSG-Medical-college-Hospital-coimbatore.jpg",
+          "admissionProcess": "Admissions processed online through TN State Selection Committee handling Government Quota (GQ) vs Management Quota (MQ) using NEET PG tiers.",
+          "placements": "High-tier demand across corporate clinics and private super-specialty medical infrastructures throughout South India.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Premium state-of-the-art diagnostic multi-labs and multi-specialty research units",
+            "Top-tier ranking among private self-financing units across Tamil Nadu due to strict clinical benchmarks"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹3,00,000 (Government Quota) to ₹14,50,000 per year (Management Quota for core Clinical disciplines)",
+            "hostelFee": "₹1,50,000 to ₹2,20,000 per year comprehensive with fully tracked dining assets",
+            "otherFees": "₹1,00,000 institutional operational infrastructure setup fees + ₹2,00,000 refundable security lock-in deposit"
+          },
+          "documentsRequired": [
+            "NEET PG Rank Card Verification",
+            "TN Allotment Ticket",
+            "MBBS Core Internship Passing Stamp",
+            "Security Deposit Draft Portfolio"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹7.5 LPA",
+            "medianSalaryPG": "₹13.8 LPA",
+            "internshipStipend": "₹35,000 to ₹40,000 per month clinical resident compensation",
+            "topRecruiters": [
+              "PSG Super Speciality Hospitals",
+              "G. Kuppuswamy Naidu Memorial Hospital",
+              "Apollo Coimbatore",
+              "Aster DM Healthcare"
+            ]
+          },
+          "nriFees": "₹25,00,000 per year"
+        }
+      ]
+    }
+  ]
+}
