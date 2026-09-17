@@ -58,7 +58,7 @@ export const SITE_IDENTITY = {
   },
   social: {
     facebook: "https://facebook.com/applymbbs",
-    instagram: "https://www.instagram.com/applymbbs",
+    instagram: "https://www.instagram.com/applymbbs.in?stkn=b3lvNjFkOTM0anA0",
     linkedin: "https://linkedin.com/company/applymbbs",
     youtube: "https://youtube.com/@applymbbs",
     twitter: "https://x.com/applymbbs",
