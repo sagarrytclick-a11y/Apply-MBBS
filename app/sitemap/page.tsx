@@ -21,6 +21,7 @@ const sections = [
       { name: "Contact Us", href: "/contact" },
       { name: "Blog", href: "/blog" },
       { name: "NEET Rank Predictor", href: "/neet-rank-predictor" },
+      { name: "Compare Colleges", href: "/colleges/compare" },
     ],
   },
   {
@@ -29,6 +30,7 @@ const sections = [
       { name: "MBBS in India", href: "/colleges/mbbs-india" },
       { name: "MBBS Abroad", href: "/colleges/mbbs-abroad" },
       { name: "MD / MS", href: "/colleges/md-ms" },
+      { name: "Compare Colleges", href: "/colleges/compare" },
     ],
   },
   {

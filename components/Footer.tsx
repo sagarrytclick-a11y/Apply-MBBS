@@ -17,6 +17,7 @@ const pathways = [
   { name: "MBBS India", href: "/colleges/mbbs-india" },
   { name: "MBBS Abroad", href: "/colleges/mbbs-abroad" },
   { name: "MD / MS", href: "/colleges/md-ms" },
+  { name: "Compare Colleges", href: "/colleges/compare" },
   { name: "NEET Predictor", href: "/neet-rank-predictor" },
   { name: "Contact", href: "/contact" },
 ];
