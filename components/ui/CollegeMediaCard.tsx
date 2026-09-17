@@ -19,6 +19,38 @@ export interface CollegeMediaCardProps {
   priority?: boolean;
 }
 
+function rankingBadge(ranking?: string): string | null {
+  if (!ranking) return null;
+  const raw = ranking.trim();
+  if (!raw) return null;
+
+  const compact = raw.toUpperCase().replace(/[\s._-]+/g, "");
+  if (
+    ["N/A", "NA", "#NA", "#N/A", "NONE", "NIL", "NULL", "—", "–"].includes(
+      compact
+    )
+  ) {
+    return null;
+  }
+
+  const hash = raw.match(/#\s*(\d+)/);
+  if (hash) return `#${hash[1]}`;
+
+  const top = raw.match(/Top\s+(\d+)/i);
+  if (top) return `Top ${top[1]}`;
+
+  if (/^govt/i.test(raw) || /^government/i.test(raw)) return "Govt";
+  if (/deemed/i.test(raw)) return "Deemed";
+  if (/^nmc\b/i.test(raw)) return "NMC";
+  if (/private/i.test(raw)) return "Private";
+  if (/trust/i.test(raw)) return "Trust";
+  if (/society/i.test(raw)) return "Society";
+  if (/featured|premier|reputed|highly\s*rated/i.test(raw)) return "Featured";
+
+  if (raw.length <= 12) return raw;
+  return `${raw.slice(0, 10)}…`;
+}
+
 export function CollegeMediaCard({
   name,
   city,
@@ -32,6 +64,7 @@ export function CollegeMediaCard({
   priority = false,
 }: CollegeMediaCardProps) {
   const [src, setSrc] = useState(image || fallbackImage);
+  const rankLabel = rankingBadge(ranking);
 
   const ring =
     tone === "abroad"
@@ -73,9 +106,9 @@ export function CollegeMediaCard({
           {type || "College"}
         </span>
 
-        {ranking ? (
+        {rankLabel ? (
           <span className="absolute right-3 top-3 inline-flex h-9 min-w-9 items-center justify-center rounded-full bg-white/95 px-2.5 font-body text-[10px] font-extrabold text-primary shadow-sm ring-1 ring-black/5">
-            {ranking.length > 8 ? ranking.slice(0, 8) : ranking}
+            {rankLabel}
           </span>
         ) : null}
       </div>

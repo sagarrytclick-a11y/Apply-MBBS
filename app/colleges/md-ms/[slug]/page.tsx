@@ -152,7 +152,7 @@ export default function MdMsSlugPage() {
     dailySeed() + 91
   );
   const privateColleges = shuffle(
-    stateData.colleges.filter((c) => c.type === "Private"),
+    stateData.colleges.filter((c) => c.type !== "Government"),
     dailySeed() + 92
   );
   const totalSeats = stateData.colleges.reduce(

@@ -12,6 +12,7 @@ import {
   Phone,
   Mail,
   Target,
+  GitCompareArrows,
 } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import Logo from "./Logo";
@@ -284,6 +285,12 @@ const resourceLinks = [
     badge: "NEW",
   },
   {
+    href: "/colleges/compare",
+    title: "Compare Colleges",
+    desc: "Side-by-side fees, seats, recognition, and rankings.",
+    badge: "NEW",
+  },
+  {
     href: "/blog",
     title: "Latest Updates",
     desc: "Counselling roundups, cutoffs, and admission explainers.",
@@ -548,6 +555,28 @@ export default function Header() {
 
         <div className="relative ml-auto hidden shrink-0 items-center gap-2 min-[1180px]:flex">
           <Link
+            href="/colleges/compare"
+            onMouseEnter={scheduleClose}
+            aria-label="Compare Colleges"
+            className={`group relative z-[1] inline-flex h-10 items-center gap-2 overflow-hidden rounded-[12px] px-3.5 font-body text-[13px] font-bold transition-all hover:-translate-y-0.5 ${
+              isActive("/colleges/compare")
+                ? "bg-gradient-to-r from-accent to-accent-deep text-white shadow-[0_4px_14px_rgba(21,128,61,0.35)]"
+                : "border border-border bg-surface text-primary hover:border-accent/40 hover:bg-accent/10 hover:text-accent-deep"
+            }`}
+          >
+            <span
+              className={`relative inline-flex h-7 w-7 items-center justify-center rounded-[9px] transition-colors ${
+                isActive("/colleges/compare")
+                  ? "bg-white/20 ring-1 ring-white/30"
+                  : "bg-primary/5 text-accent group-hover:bg-accent group-hover:text-white"
+              }`}
+            >
+              <GitCompareArrows className="h-3.5 w-3.5" strokeWidth={2.4} />
+            </span>
+            <span className="relative whitespace-nowrap">Compare</span>
+          </Link>
+
+          <Link
             href="/neet-rank-predictor"
             onMouseEnter={scheduleClose}
             aria-label="NEET Rank Predictor"
@@ -612,6 +641,21 @@ export default function Header() {
         </div>
 
         <div className="ml-auto flex items-center gap-2 min-[1180px]:hidden">
+          <Link
+            href="/colleges/compare"
+            onClick={() => {
+              setMobileOpen(false);
+              setPanel(null);
+            }}
+            aria-label="Compare Colleges"
+            className={`inline-flex h-10 w-10 items-center justify-center rounded-[10px] ${
+              isActive("/colleges/compare")
+                ? "bg-gradient-to-r from-accent to-accent-deep text-white shadow-[0_3px_10px_rgba(21,128,61,0.3)]"
+                : "border border-border bg-surface text-primary"
+            }`}
+          >
+            <GitCompareArrows className="h-4 w-4" strokeWidth={2.4} />
+          </Link>
           <Link
             href="/neet-rank-predictor"
             onClick={() => {
@@ -806,6 +850,23 @@ export default function Header() {
               </div>
 
               <div className="space-y-2 border-t border-border pt-3">
+                <Link
+                  href="/colleges/compare"
+                  onClick={() => setMobileOpen(false)}
+                  className="group flex w-full items-center gap-3 rounded-[14px] border border-border bg-surface px-4 py-3.5 text-left transition-colors hover:border-accent/40 hover:bg-accent/10"
+                >
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-[12px] bg-primary/5 text-accent transition-colors group-hover:bg-accent group-hover:text-white">
+                    <GitCompareArrows className="h-5 w-5" strokeWidth={2.3} />
+                  </span>
+                  <span>
+                    <span className="block font-body text-[15px] font-bold text-primary">
+                      Compare Colleges
+                    </span>
+                    <span className="block font-body text-xs text-muted">
+                      Fees, seats & rankings side by side
+                    </span>
+                  </span>
+                </Link>
                 <Link
                   href="/neet-rank-predictor"
                   onClick={() => setMobileOpen(false)}

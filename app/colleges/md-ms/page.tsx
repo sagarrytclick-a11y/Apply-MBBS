@@ -1,9 +1,11 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
+  ChevronLeft,
+  ChevronRight,
   GraduationCap,
   Headphones,
   MapPin,
@@ -67,12 +69,29 @@ const MdMsPage: React.FC = () => {
   const [selectedState, setSelectedState] = useState("");
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [canSlideLeft, setCanSlideLeft] = useState(false);
+  const [canSlideRight, setCanSlideRight] = useState(false);
+  const stateSlideRef = useRef<HTMLDivElement>(null);
 
   const collegesPerPage = 12;
   const phoneTel = SITE_IDENTITY.contact.phone
     .split(",")[0]
     .trim()
     .replace(/[^0-9+]/g, "");
+
+  const updateStateSlide = useCallback(() => {
+    const el = stateSlideRef.current;
+    if (!el) return;
+    const max = el.scrollWidth - el.clientWidth;
+    setCanSlideLeft(el.scrollLeft > 4);
+    setCanSlideRight(max > 4 && el.scrollLeft < max - 4);
+  }, []);
+
+  const slideStates = (dir: -1 | 1) => {
+    const el = stateSlideRef.current;
+    if (!el) return;
+    el.scrollBy({ left: dir * Math.min(280, el.clientWidth * 0.7), behavior: "smooth" });
+  };
 
   useEffect(() => {
     const loadData = async () => {
@@ -93,6 +112,19 @@ const MdMsPage: React.FC = () => {
     };
     loadData();
   }, []);
+
+  useEffect(() => {
+    const el = stateSlideRef.current;
+    if (!el || loading) return;
+    updateStateSlide();
+    el.addEventListener("scroll", updateStateSlide, { passive: true });
+    const ro = new ResizeObserver(updateStateSlide);
+    ro.observe(el);
+    return () => {
+      el.removeEventListener("scroll", updateStateSlide);
+      ro.disconnect();
+    };
+  }, [loading, states, updateStateSlide]);
 
   const allColleges = useMemo(
     () => shuffle(states.flatMap((s) => s.colleges), dailySeed() + 81),
@@ -239,46 +271,71 @@ const MdMsPage: React.FC = () => {
               }}
               selects={[]}
             />
-            <div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-0.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              <button
-                type="button"
-                onClick={() => {
-                  setSelectedState("");
-                  setCurrentPage(1);
-                }}
-                className={`shrink-0 rounded-[10px] border px-3.5 py-2 font-body text-xs font-bold transition-colors ${
-                  selectedState === ""
-                    ? "border-accent bg-accent text-white"
-                    : "border-border bg-surface text-primary hover:border-accent/40"
-                }`}
-              >
-                All states · {allColleges.length}
-              </button>
-              {states.map((s) => (
+            <div className="relative">
+              {canSlideLeft && (
                 <button
-                  key={s.id}
+                  type="button"
+                  aria-label="Slide states left"
+                  onClick={() => slideStates(-1)}
+                  className="absolute left-0 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-white text-primary shadow-[0_4px_14px_rgba(15,23,42,0.12)] transition-colors hover:border-accent hover:text-accent"
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                </button>
+              )}
+              {canSlideRight && (
+                <button
+                  type="button"
+                  aria-label="Slide states right"
+                  onClick={() => slideStates(1)}
+                  className="absolute right-0 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-white text-primary shadow-[0_4px_14px_rgba(15,23,42,0.12)] transition-colors hover:border-accent hover:text-accent"
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </button>
+              )}
+              <div
+                ref={stateSlideRef}
+                className="-mx-1 flex touch-pan-x gap-2 overflow-x-auto scroll-smooth px-1 pb-0.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              >
+                <button
                   type="button"
                   onClick={() => {
-                    setSelectedState(s.name);
+                    setSelectedState("");
                     setCurrentPage(1);
                   }}
-                  className={`inline-flex shrink-0 items-center gap-1.5 rounded-[10px] border px-3.5 py-2 font-body text-xs font-bold transition-colors ${
-                    selectedState === s.name
+                  className={`shrink-0 rounded-[10px] border px-3.5 py-2 font-body text-xs font-bold transition-colors ${
+                    selectedState === ""
                       ? "border-accent bg-accent text-white"
                       : "border-border bg-surface text-primary hover:border-accent/40"
                   }`}
                 >
-                  <MapPin className="h-3 w-3 opacity-70" />
-                  {s.name}
-                  <span
-                    className={
-                      selectedState === s.name ? "text-white/80" : "text-muted"
-                    }
-                  >
-                    {s.colleges.length}
-                  </span>
+                  All states · {allColleges.length}
                 </button>
-              ))}
+                {states.map((s) => (
+                  <button
+                    key={s.id}
+                    type="button"
+                    onClick={() => {
+                      setSelectedState(s.name);
+                      setCurrentPage(1);
+                    }}
+                    className={`inline-flex shrink-0 items-center gap-1.5 rounded-[10px] border px-3.5 py-2 font-body text-xs font-bold transition-colors ${
+                      selectedState === s.name
+                        ? "border-accent bg-accent text-white"
+                        : "border-border bg-surface text-primary hover:border-accent/40"
+                    }`}
+                  >
+                    <MapPin className="h-3 w-3 opacity-70" />
+                    {s.name}
+                    <span
+                      className={
+                        selectedState === s.name ? "text-white/80" : "text-muted"
+                      }
+                    >
+                      {s.colleges.length}
+                    </span>
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 

@@ -111,6 +111,96 @@ export function getCollegeBySlug(slug: string) {
   return getAllColleges().find((c) => toCollegeSlug(c.name) === slug) || null;
 }
 
+export type CompareCollege = CatalogCollege & {
+  slug: string;
+  href: string;
+  nriFees?: string;
+  admissionProcess?: string;
+};
+
+/** Stable (unshuffled) catalog for compare / search pickers. */
+export function getCompareCatalog(): CompareCollege[] {
+  const list: CompareCollege[] = [];
+
+  for (const state of mbbsIndia.states || []) {
+    for (const c of state.colleges || []) {
+      const slug = toCollegeSlug(c.name);
+      list.push({
+        id: c.id,
+        name: c.name,
+        city: c.city,
+        fees: "fees" in c ? String(c.fees) : undefined,
+        seats: "seats" in c && typeof c.seats === "number" ? c.seats : undefined,
+        recognition: "recognition" in c ? String(c.recognition) : undefined,
+        ranking: "ranking" in c ? String(c.ranking) : undefined,
+        type: "type" in c ? String(c.type) : undefined,
+        image: "image" in c ? String(c.image) : undefined,
+        region: state.name,
+        pathway: "india",
+        slug,
+        href: `/colleges/${slug}`,
+        nriFees: "nriFees" in c ? String(c.nriFees) : undefined,
+        admissionProcess:
+          "admissionProcess" in c ? String(c.admissionProcess) : undefined,
+      });
+    }
+  }
+
+  for (const country of mbbsAbroad.countries || []) {
+    for (const c of country.colleges || []) {
+      const slug = toCollegeSlug(c.name);
+      list.push({
+        id: c.id,
+        name: c.name,
+        city: c.city,
+        fees: "fees" in c ? String(c.fees) : undefined,
+        recognition: "recognition" in c ? String(c.recognition) : undefined,
+        ranking: "ranking" in c ? String(c.ranking) : undefined,
+        type: "type" in c ? String(c.type) : undefined,
+        image: "image" in c ? String(c.image) : undefined,
+        region: country.name,
+        pathway: "abroad",
+        slug,
+        href: `/colleges/${slug}`,
+        nriFees: "nriFees" in c ? String(c.nriFees) : undefined,
+        admissionProcess:
+          "admissionProcess" in c ? String(c.admissionProcess) : undefined,
+      });
+    }
+  }
+
+  for (const state of mdMs.states || []) {
+    for (const c of state.colleges || []) {
+      const slug = toCollegeSlug(c.name);
+      list.push({
+        id: c.id,
+        name: c.name,
+        city: c.city,
+        fees: "fees" in c ? String(c.fees) : undefined,
+        seats: "seats" in c && typeof c.seats === "number" ? c.seats : undefined,
+        recognition: "recognition" in c ? String(c.recognition) : undefined,
+        ranking: "ranking" in c ? String(c.ranking) : undefined,
+        type: "type" in c ? String(c.type) : undefined,
+        image: "image" in c ? String(c.image) : undefined,
+        region: state.name,
+        pathway: "mdms",
+        parentSlug: state.slug,
+        slug,
+        href: `/colleges/${slug}`,
+        nriFees: "nriFees" in c ? String(c.nriFees) : undefined,
+        admissionProcess:
+          "admissionProcess" in c ? String(c.admissionProcess) : undefined,
+      });
+    }
+  }
+
+  return list;
+}
+
+export function getCompareCollegeBySlug(slug: string) {
+  return getCompareCatalog().find((c) => c.slug === slug) || null;
+}
+
 export function getMdMsStates() {
   return (mdMs.states || []).map((s) => ({
     name: s.name,

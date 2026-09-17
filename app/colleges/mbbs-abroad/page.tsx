@@ -1,11 +1,13 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
   ArrowRight,
   CheckCircle2,
+  ChevronLeft,
+  ChevronRight,
   Globe2,
   Headphones,
   Plane,
@@ -62,12 +64,29 @@ const MbbsAbroadPage: React.FC = () => {
   const [selectedCountry, setSelectedCountry] = useState("");
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [canSlideLeft, setCanSlideLeft] = useState(false);
+  const [canSlideRight, setCanSlideRight] = useState(false);
+  const countrySlideRef = useRef<HTMLDivElement>(null);
 
   const collegesPerPage = 12;
   const phoneTel = SITE_IDENTITY.contact.phone
     .split(",")[0]
     .trim()
     .replace(/[^0-9+]/g, "");
+
+  const updateCountrySlide = useCallback(() => {
+    const el = countrySlideRef.current;
+    if (!el) return;
+    const max = el.scrollWidth - el.clientWidth;
+    setCanSlideLeft(el.scrollLeft > 4);
+    setCanSlideRight(max > 4 && el.scrollLeft < max - 4);
+  }, []);
+
+  const slideCountries = (dir: -1 | 1) => {
+    const el = countrySlideRef.current;
+    if (!el) return;
+    el.scrollBy({ left: dir * Math.min(320, el.clientWidth * 0.7), behavior: "smooth" });
+  };
 
   useEffect(() => {
     try {
@@ -79,6 +98,19 @@ const MbbsAbroadPage: React.FC = () => {
       setLoading(false);
     }
   }, []);
+
+  useEffect(() => {
+    const el = countrySlideRef.current;
+    if (!el || loading) return;
+    updateCountrySlide();
+    el.addEventListener("scroll", updateCountrySlide, { passive: true });
+    const ro = new ResizeObserver(updateCountrySlide);
+    ro.observe(el);
+    return () => {
+      el.removeEventListener("scroll", updateCountrySlide);
+      ro.disconnect();
+    };
+  }, [loading, countries, updateCountrySlide]);
 
   const allColleges = useMemo(
     () =>
@@ -176,60 +208,85 @@ const MbbsAbroadPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="-mx-1 flex gap-3 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            <button
-              type="button"
-              onClick={() => {
-                setSelectedCountry("");
-                setCurrentPage(1);
-              }}
-              className={`flex h-[96px] w-[104px] shrink-0 flex-col items-center justify-center rounded-[14px] border-2 transition-colors ${
-                selectedCountry === ""
-                  ? "border-accent bg-white shadow-[0_8px_24px_rgba(21,128,61,0.12)]"
-                  : "border-transparent bg-white/70 hover:border-accent/30 hover:bg-white"
-              }`}
+          <div className="relative">
+            {canSlideLeft && (
+              <button
+                type="button"
+                aria-label="Slide countries left"
+                onClick={() => slideCountries(-1)}
+                className="absolute left-0 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-white text-primary shadow-[0_4px_14px_rgba(15,23,42,0.12)] transition-colors hover:border-accent hover:text-accent"
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </button>
+            )}
+            {canSlideRight && (
+              <button
+                type="button"
+                aria-label="Slide countries right"
+                onClick={() => slideCountries(1)}
+                className="absolute right-0 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-white text-primary shadow-[0_4px_14px_rgba(15,23,42,0.12)] transition-colors hover:border-accent hover:text-accent"
+              >
+                <ChevronRight className="h-4 w-4" />
+              </button>
+            )}
+            <div
+              ref={countrySlideRef}
+              className="-mx-1 flex touch-pan-x gap-3 overflow-x-auto scroll-smooth px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
             >
-              <Plane className="h-5 w-5 text-accent-deep" />
-              <span className="mt-2 font-body text-xs font-bold text-primary">
-                All
-              </span>
-            </button>
-            {countries.map((c) => {
-              const active = selectedCountry === c.name;
-              const count = c.colleges?.length ?? 0;
-              return (
-                <button
-                  key={c.id}
-                  type="button"
-                  onClick={() => {
-                    setSelectedCountry(c.name);
-                    setCurrentPage(1);
-                  }}
-                  className={`relative h-[96px] w-[124px] shrink-0 overflow-hidden rounded-[14px] border-2 text-left transition-colors ${
-                    active
-                      ? "border-accent shadow-[0_8px_24px_rgba(21,128,61,0.14)]"
-                      : "border-transparent hover:border-accent/35"
-                  }`}
-                >
-                  <Image
-                    src={c.image || c.flag}
-                    alt={`${c.name} medical universities`}
-                    fill
-                    sizes="124px"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-black/10" />
-                  <div className="absolute inset-x-0 bottom-0 p-2.5">
-                    <p className="font-body text-xs font-bold text-white drop-shadow">
-                      {c.name}
-                    </p>
-                    <p className="font-body text-[10px] text-white/80">
-                      {count} universities
-                    </p>
-                  </div>
-                </button>
-              );
-            })}
+              <button
+                type="button"
+                onClick={() => {
+                  setSelectedCountry("");
+                  setCurrentPage(1);
+                }}
+                className={`flex h-[96px] w-[104px] shrink-0 flex-col items-center justify-center rounded-[14px] border-2 transition-colors ${
+                  selectedCountry === ""
+                    ? "border-accent bg-white shadow-[0_8px_24px_rgba(21,128,61,0.12)]"
+                    : "border-transparent bg-white/70 hover:border-accent/30 hover:bg-white"
+                }`}
+              >
+                <Plane className="h-5 w-5 text-accent-deep" />
+                <span className="mt-2 font-body text-xs font-bold text-primary">
+                  All
+                </span>
+              </button>
+              {countries.map((c) => {
+                const active = selectedCountry === c.name;
+                const count = c.colleges?.length ?? 0;
+                return (
+                  <button
+                    key={c.id}
+                    type="button"
+                    onClick={() => {
+                      setSelectedCountry(c.name);
+                      setCurrentPage(1);
+                    }}
+                    className={`relative h-[96px] w-[124px] shrink-0 overflow-hidden rounded-[14px] border-2 text-left transition-colors ${
+                      active
+                        ? "border-accent shadow-[0_8px_24px_rgba(21,128,61,0.14)]"
+                        : "border-transparent hover:border-accent/35"
+                    }`}
+                  >
+                    <Image
+                      src={c.image || c.flag}
+                      alt={`${c.name} medical universities`}
+                      fill
+                      sizes="124px"
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-black/10" />
+                    <div className="absolute inset-x-0 bottom-0 p-2.5">
+                      <p className="font-body text-xs font-bold text-white drop-shadow">
+                        {c.name}
+                      </p>
+                      <p className="font-body text-[10px] text-white/80">
+                        {count} universities
+                      </p>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
