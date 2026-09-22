@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Send } from "lucide-react";
+import { ArrowRight, GraduationCap } from "lucide-react";
+import { indiaStates } from "@/lib/nav-mega-data";
 
 type TickerItem = {
   prefix: string;
@@ -9,85 +10,46 @@ type TickerItem = {
   href: string;
 };
 
-function collegeSlug(name: string) {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9\s]/g, "")
-    .replace(/\s+/g, "-");
-}
+const TICKER_ITEMS: TickerItem[] = indiaStates.flatMap((s) =>
+  s.colleges.map((c) => ({
+    prefix: s.name,
+    bold: c.name,
+    href: c.href,
+  }))
+);
 
-const TICKER_ITEMS: TickerItem[] = [
-  { prefix: "", bold: "MBBS Abroad", href: "/colleges/mbbs-abroad" },
-  { prefix: "MBBS in", bold: "Russia", href: "/country/russia" },
-  {
-    prefix: "",
-    bold: "Perm State Medical University",
-    href: `/colleges/${collegeSlug("Perm State Medical University, Perm")}`,
-  },
-  { prefix: "MBBS in", bold: "Kazakhstan", href: "/country/kazakhstan" },
-  {
-    prefix: "",
-    bold: "Astana Medical University",
-    href: `/colleges/${collegeSlug("Astana Medical University")}`,
-  },
-  { prefix: "MBBS in", bold: "Georgia", href: "/country/georgia" },
-  {
-    prefix: "",
-    bold: "BAU International University",
-    href: `/colleges/${collegeSlug("BAU International University")}`,
-  },
-  { prefix: "MBBS in", bold: "Uzbekistan", href: "/country/uzbekistan" },
-  {
-    prefix: "",
-    bold: "Andijan State Medical University",
-    href: `/colleges/${collegeSlug("Andijan State Medical University")}`,
-  },
-  { prefix: "MBBS in", bold: "Bangladesh", href: "/country/bangladesh" },
-  {
-    prefix: "",
-    bold: "Dhaka Medical College",
-    href: `/colleges/${collegeSlug("Dhaka Medical College")}`,
-  },
-  { prefix: "MBBS in", bold: "Nepal", href: "/country/nepal" },
-  {
-    prefix: "",
-    bold: "Institute of Medicine (IOM)",
-    href: `/colleges/${collegeSlug("Institute of Medicine (IOM)")}`,
-  },
-  { prefix: "MBBS in", bold: "Tajikistan", href: "/country/tajikistan" },
-  {
-    prefix: "",
-    bold: "Avicenna Tajik State Medical University",
-    href: `/colleges/${collegeSlug("Avicenna Tajik State Medical University")}`,
-  },
+// fallback if data empty (build-time safety)
+const FALLBACK: TickerItem[] = [
+  { prefix: "MBBS India", bold: "Explore colleges", href: "/colleges/mbbs-india" },
 ];
 
 function TickerPill({ item }: { item: TickerItem }) {
   return (
     <Link
       href={item.href}
-      className="inline-flex shrink-0 items-center gap-2 rounded-md border border-white/25 bg-white/15 px-2.5 py-1 text-[13px] text-white transition-colors hover:bg-white/25"
+      className="inline-flex shrink-0 items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[13px] text-white backdrop-blur-sm transition-colors hover:bg-white hover:text-primary"
     >
-      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white text-[#14532d]">
-        <Send className="h-2.5 w-2.5" aria-hidden />
+      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white text-accent-deep">
+        <GraduationCap className="h-3 w-3" aria-hidden />
       </span>
       <span className="whitespace-nowrap">
-        {item.prefix ? <span className="text-white/80">{item.prefix} </span> : null}
+        <span className="text-white/75">{item.prefix} · </span>
         <span className="font-semibold">{item.bold}</span>
       </span>
-      <ArrowRight className="h-3 w-3 shrink-0 text-white/80" aria-hidden />
+      <ArrowRight className="h-3 w-3 shrink-0 opacity-70" aria-hidden />
     </Link>
   );
 }
 
 export default function BottomTicker() {
-  const loop = [...TICKER_ITEMS, ...TICKER_ITEMS];
+  const items = TICKER_ITEMS.length ? TICKER_ITEMS : FALLBACK;
+  const loop = [...items, ...items];
 
   return (
     <div
-      className="bottom-ticker fixed inset-x-0 bottom-0 z-[60] bg-[#14532d]"
+      className="bottom-ticker fixed inset-x-0 bottom-0 z-[60] border-t border-white/10 bg-gradient-to-r from-primary via-[#14532d] to-primary"
       role="region"
-      aria-label="Quick MBBS abroad destination links"
+      aria-label="MBBS India colleges — quick links"
     >
       <div className="bottom-ticker-track flex w-max items-center gap-3 pl-3">
         {loop.map((item, i) => (

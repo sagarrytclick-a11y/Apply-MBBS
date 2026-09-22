@@ -514,7 +514,7 @@ html::-webkit-scrollbar-corner {
 }
 
 .bottom-ticker-track {
-  animation: bottom-ticker-scroll 55s linear infinite;
+  animation: bottom-ticker-scroll 650s linear infinite;
   will-change: transform;
 }
 

@@ -107,7 +107,7 @@ function pathwayLabel(pathway: string) {
   return pathway;
 }
 
-export default function HeroSearch() {
+export default function HeroSearch({ variant = "default" }: { variant?: "default" | "hero" }) {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
   const overlayInputRef = useRef<HTMLInputElement>(null);
@@ -456,9 +456,38 @@ export default function HeroSearch() {
         )
       : null;
 
+  // Hero variant: compact accent CTA — used inside HeroSection instead of "Get Expert Counselling"
+  const heroTrigger = (
+    <button
+      type="button"
+      onClick={openOverlay}
+      className="inline-flex h-[46px] items-center justify-between gap-3 rounded-[10px] bg-accent px-5 font-body text-[13px] font-extrabold text-white shadow-[0_6px_20px_rgba(21,128,61,0.35)] transition hover:bg-accent-deep hover:shadow-[0_8px_26px_rgba(21,128,61,0.45)] sm:h-[48px] sm:px-6 sm:text-sm"
+      aria-haspopup="dialog"
+      aria-expanded={open}
+    >
+      <span className="inline-flex items-center gap-2">
+        <Search className="h-4 w-4" />
+        Search Colleges
+      </span>
+      <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/15 sm:ml-1">
+        <ArrowRight className="h-4 w-4" />
+      </span>
+      <input ref={inputRef} type="search" readOnly tabIndex={-1} aria-hidden className="sr-only" value="" />
+    </button>
+  );
+
+  if (variant === "hero") {
+    return (
+      <>
+        {heroTrigger}
+        {overlay}
+      </>
+    );
+  }
+
   return (
     <>
-      {/* Hero trigger — opens full overlay */}
+      {/* Default trigger — opens full overlay */}
       <div className="w-full max-w-2xl px-0 sm:px-0">
         <button
           type="button"
