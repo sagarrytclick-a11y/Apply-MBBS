@@ -63,12 +63,16 @@ function ListWisePanel({
   directoryLabel,
   emptyHint,
   itemPrefix,
+  panelTitle,
+  panelDesc,
 }: {
   categories: CategoryItem[];
   directoryHref: string;
   directoryLabel: string;
   emptyHint: string;
   itemPrefix?: string;
+  panelTitle: string;
+  panelDesc: string;
 }) {
   const [activeId, setActiveId] = useState<string | null>(
     () => categories[0]?.id ?? null
@@ -99,121 +103,135 @@ function ListWisePanel({
       <Link
         href={c.href}
         prefetch={false}
-        className="block rounded-[10px] px-2 py-2.5 transition-colors hover:bg-background"
+        className="group flex items-start justify-between gap-2 rounded-[10px] px-2 py-2.5 transition-colors hover:bg-background"
       >
-        <span className="block truncate font-body text-[13px] font-bold text-primary">
-          {c.name}
+        <span className="min-w-0 flex-1">
+          <span className="block truncate font-body text-[13px] font-bold text-primary group-hover:text-accent-deep">
+            {c.name}
+          </span>
+          <span className="mt-0.5 block truncate font-body text-[11px] text-muted">
+            {c.city}
+            {c.type ? ` · ${c.type}` : ""}
+          </span>
         </span>
-        <span className="mt-0.5 block truncate font-body text-[11px] text-muted">
-          {c.city}
-          {c.type ? ` · ${c.type}` : ""}
-        </span>
+        <ArrowUpRight className="mt-1 h-3 w-3 shrink-0 text-muted/40 transition-colors group-hover:text-accent" />
       </Link>
     </li>
   );
 
   return (
-    <div className="grid h-[420px] overflow-hidden rounded-[20px] border border-border bg-white shadow-[0_20px_50px_rgba(15,23,42,0.12)] grid-cols-[240px_1fr]">
-      <div className="flex h-full min-h-0 flex-col border-r border-border bg-[#f8fafc] p-4">
-        <p className="mb-3 shrink-0 font-body text-[11px] font-bold uppercase tracking-[0.16em] text-muted">
-          Select category
-        </p>
-        <ul className="custom-scrollbar min-h-0 flex-1 space-y-1 overflow-y-auto pr-1">
-          {categories.map((item) => {
-            const selected = active?.id === item.id;
-            return (
-              <li key={item.id}>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setActiveId(item.id);
-                    setQuery("");
-                  }}
-                  className={`w-full rounded-[12px] px-3 py-2.5 text-left transition-colors ${
-                    selected
-                      ? "border-l-[3px] border-accent bg-accent/10 text-primary"
-                      : "border-l-[3px] border-transparent text-text/80 hover:bg-white hover:text-primary"
-                  }`}
-                >
-                  <span className="block truncate font-body text-[13px] font-semibold">
-                    {itemPrefix ? `${itemPrefix} ${item.label}` : item.label}
-                  </span>
-                  {item.meta && (
-                    <span
-                      className={`mt-0.5 block font-body text-[11px] ${
-                        selected ? "text-accent-deep" : "text-muted"
-                      }`}
-                    >
-                      {item.meta}
-                    </span>
-                  )}
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-
-      <div className="flex h-full min-h-0 flex-col p-4 sm:p-5">
-        <div className="mb-3 flex shrink-0 items-center justify-between gap-3">
-          <p className="font-body text-[12px] font-bold uppercase tracking-[0.12em] text-accent-deep">
-            Universities
-            {active ? (
-              <span className="ml-2 font-semibold normal-case tracking-normal text-muted">
-                · {active.label}
-              </span>
-            ) : null}
-          </p>
-          <span className="rounded-full bg-accent/15 px-2.5 py-1 font-body text-[10px] font-extrabold uppercase tracking-wide text-accent-deep">
-            {list.length} listed
-          </span>
+    <div className="overflow-hidden rounded-[20px] border border-border bg-white shadow-[0_20px_50px_rgba(15,23,42,0.14)]">
+      {/* Top dark header — matches screenshot vibe, theme-tinted */}
+      <div className="flex items-center justify-between gap-4 bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#334155] px-5 py-4 sm:px-6">
+        <div className="min-w-0">
+          <h3 className="font-display text-[15px] font-extrabold leading-none text-white">{panelTitle}</h3>
+          <p className="mt-1 max-w-[52ch] truncate font-body text-xs leading-relaxed text-white/70">{panelDesc}</p>
         </div>
-
-        <label className="relative mb-3 block shrink-0">
-          <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" />
-          <input
-            type="search"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search colleges..."
-            className="h-11 w-full rounded-[12px] border border-border bg-white pl-10 pr-3 font-body text-sm text-primary outline-none transition-colors placeholder:text-muted focus:border-accent"
-          />
-        </label>
-
-        <div className="custom-scrollbar min-h-0 flex-1 overflow-y-auto">
-          {!active && !query.trim() ? (
-            <div className="flex h-full min-h-[140px] flex-col items-center justify-center px-4 text-center">
-              <p className="max-w-xs font-body text-sm text-muted">{emptyHint}</p>
-            </div>
-          ) : list.length === 0 ? (
-            <div className="flex h-full min-h-[140px] items-center justify-center">
-              <p className="font-body text-sm text-muted">No colleges match that search.</p>
-            </div>
-          ) : (
-            <div className="grid h-full grid-cols-2 gap-x-4">
-              <ul className="divide-y divide-border/70 border-r border-border/70 pr-3">
-                {leftList.map(renderCollege)}
-              </ul>
-              <ul className="divide-y divide-border/70 pl-1">
-                {rightList.length > 0
-                  ? rightList.map(renderCollege)
-                  : (
-                    <li className="px-2 py-3 font-body text-[12px] text-muted">
-                      More campuses added regularly
-                    </li>
-                  )}
-              </ul>
-            </div>
-          )}
-        </div>
-
         <Link
-          href={active?.href || directoryHref}
-          className="mt-4 inline-flex h-11 w-full shrink-0 items-center justify-center gap-2 rounded-[12px] bg-accent font-body text-[13px] font-extrabold uppercase tracking-[0.06em] text-white transition-colors hover:bg-accent-deep"
+          href={directoryHref}
+          className="hidden shrink-0 items-center gap-1.5 rounded-full bg-accent px-4 py-2 font-body text-[11px] font-extrabold uppercase tracking-wide text-white shadow-[0_4px_14px_rgba(21,128,61,0.35)] transition hover:bg-accent-deep sm:inline-flex"
         >
-          {active ? `Explore ${active.label}` : directoryLabel}
-          <ArrowUpRight className="h-4 w-4" />
+          {directoryLabel.includes("ALL") ? directoryLabel : directoryLabel.replace("Open full", "ALL").toUpperCase()}
+          <ArrowUpRight className="h-3.5 w-3.5" />
         </Link>
+      </div>
+      <div className="grid h-[420px] grid-cols-[260px_1fr]">
+        <div className="flex h-full min-h-0 flex-col border-r border-border bg-[#f8fafc]/80 p-3">
+          <p className="mb-2 px-2 font-body text-[10px] font-bold uppercase tracking-[0.14em] text-muted">
+            Select category
+          </p>
+          <ul className="custom-scrollbar min-h-0 flex-1 space-y-1 overflow-y-auto pr-1">
+            {categories.map((item) => {
+              const selected = active?.id === item.id;
+              return (
+                <li key={item.id}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setActiveId(item.id);
+                      setQuery("");
+                    }}
+                    className={`group flex w-full items-center justify-between gap-2 rounded-[12px] px-3 py-3 text-left transition-all ${
+                      selected
+                        ? "border-l-[3px] border-accent bg-white text-primary shadow-sm"
+                        : "border-l-[3px] border-transparent text-text/80 hover:bg-white hover:text-primary"
+                    }`}
+                  >
+                    <span className="min-w-0 flex-1">
+                      <span className={`block truncate font-body text-[13px] ${selected ? "font-bold" : "font-semibold"}`}>
+                        {itemPrefix ? `${itemPrefix} ${item.label}` : item.label}
+                      </span>
+                      {item.meta && (
+                        <span
+                          className={`mt-0.5 block font-body text-[11px] ${selected ? "font-semibold text-accent-deep" : "text-muted"}`}
+                        >
+                          {item.meta}
+                        </span>
+                      )}
+                    </span>
+                    <ChevronDown className={`h-3 w-3 shrink-0 -rotate-90 transition-colors ${selected ? "text-accent" : "text-muted/60 group-hover:text-muted"}`} />
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+
+        <div className="flex h-full min-h-0 flex-col bg-white p-4 sm:p-5">
+          <div className="mb-3 flex shrink-0 items-center justify-between gap-3">
+            <p className="font-body text-[11px] font-bold uppercase tracking-[0.12em] text-muted">
+              {active ? active.label.toUpperCase() : "UNIVERSITIES"}{" "}
+              <span className="font-medium normal-case tracking-normal text-muted/70">· {list.length} COLLEGES</span>
+            </p>
+            <Link href={active?.href || directoryHref} className="hidden items-center gap-1 font-body text-[11px] font-bold text-accent-deep hover:underline sm:inline-flex">
+              View state <ArrowUpRight className="h-3 w-3" />
+            </Link>
+          </div>
+
+          <label className="relative mb-3 block shrink-0">
+            <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" />
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search colleges..."
+              className="h-11 w-full rounded-[12px] border border-border bg-white pl-10 pr-3 font-body text-sm text-primary outline-none transition-colors placeholder:text-muted focus:border-accent focus:ring-2 focus:ring-accent/15"
+            />
+          </label>
+
+          <div className="custom-scrollbar min-h-0 flex-1 overflow-y-auto pr-1">
+            {!active && !query.trim() ? (
+              <div className="flex h-full min-h-[140px] flex-col items-center justify-center px-4 text-center">
+                <p className="max-w-xs font-body text-sm text-muted">{emptyHint}</p>
+              </div>
+            ) : list.length === 0 ? (
+              <div className="flex h-full min-h-[140px] items-center justify-center">
+                <p className="font-body text-sm text-muted">No colleges match that search.</p>
+              </div>
+            ) : (
+              <div className="grid h-full grid-cols-2 gap-x-5">
+                <ul className="divide-y divide-border/60 border-r border-border/60 pr-3">
+                  {leftList.map(renderCollege)}
+                </ul>
+                <ul className="divide-y divide-border/60 pl-2">
+                  {rightList.length > 0
+                    ? rightList.map(renderCollege)
+                    : (
+                      <li className="px-2 py-3 font-body text-[12px] text-muted">More campuses added regularly</li>
+                    )}
+                </ul>
+              </div>
+            )}
+          </div>
+
+          <Link
+            href={active?.href || directoryHref}
+            className="mt-4 inline-flex h-11 w-full shrink-0 items-center justify-center gap-2 rounded-[12px] bg-accent font-body text-[13px] font-extrabold uppercase tracking-[0.06em] text-white transition-colors hover:bg-accent-deep sm:hidden"
+          >
+            {active ? `Explore ${active.label}` : directoryLabel}
+            <ArrowUpRight className="h-4 w-4" />
+          </Link>
+        </div>
       </div>
     </div>
   );
@@ -232,7 +250,9 @@ function IndiaPanel() {
     <ListWisePanel
       categories={categories}
       directoryHref="/colleges/mbbs-india"
-      directoryLabel="Open full India list"
+      directoryLabel="ALL STATES"
+      panelTitle="MBBS in India"
+      panelDesc="Browse state-wise medical colleges, NEET counselling, fees & admission guidance."
       emptyHint="Select a state to see listed medical colleges."
     />
   );
@@ -251,7 +271,9 @@ function AbroadPanel() {
     <ListWisePanel
       categories={categories}
       directoryHref="/colleges/mbbs-abroad"
-      directoryLabel="Open full abroad list"
+      directoryLabel="ALL COUNTRIES"
+      panelTitle="MBBS Abroad"
+      panelDesc="Compare NMC-aligned universities by country, fees, and recognition."
       emptyHint="Select a country to see overseas universities."
       itemPrefix="Study in"
     />
@@ -271,7 +293,9 @@ function MdMsPanel() {
     <ListWisePanel
       categories={categories}
       directoryHref="/colleges/md-ms"
-      directoryLabel="Open full MD/MS list"
+      directoryLabel="ALL STATES"
+      panelTitle="MD / MS"
+      panelDesc="PG specialisation seats by state with quota and cut-off clarity."
       emptyHint="Select a state to see MD / MS colleges."
     />
   );
@@ -336,20 +360,21 @@ function ResourcesPanel() {
   };
 
   return (
-    <div className="overflow-hidden rounded-[20px] border border-border bg-white p-4 shadow-[0_20px_50px_rgba(15,23,42,0.12)] sm:p-5">
-      <div className="mb-3 flex items-center justify-between">
-        <p className="font-body text-[12px] font-bold uppercase tracking-[0.12em] text-accent-deep">
-          Helpful links
-        </p>
-        <span className="rounded-full bg-accent/15 px-2.5 py-1 font-body text-[10px] font-extrabold uppercase tracking-wide text-accent-deep">
-          Updates
+    <div className="overflow-hidden rounded-[20px] border border-border bg-white shadow-[0_20px_50px_rgba(15,23,42,0.14)]">
+      <div className="flex items-center justify-between gap-4 bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#334155] px-5 py-4 sm:px-6">
+        <div>
+          <h3 className="font-display text-[15px] font-extrabold leading-none text-white">Latest Updates</h3>
+          <p className="mt-1 font-body text-xs text-white/70">Tools, guides and counselling explainers</p>
+        </div>
+        <span className="hidden rounded-full bg-accent px-3 py-1.5 font-body text-[11px] font-extrabold uppercase tracking-wide text-white sm:inline-flex">
+          Resources
         </span>
       </div>
-      <div className="grid grid-cols-2 gap-x-4">
-        <ul className="divide-y divide-border/70 border-r border-border/70 pr-3">
+      <div className="grid grid-cols-2 gap-x-4 p-4 sm:p-5">
+        <ul className="divide-y divide-border/60 border-r border-border/60 pr-3">
           {left.map(renderResource)}
         </ul>
-        <ul className="divide-y divide-border/70 pl-1">{right.map(renderResource)}</ul>
+        <ul className="divide-y divide-border/60 pl-2">{right.map(renderResource)}</ul>
       </div>
     </div>
   );
@@ -410,33 +435,33 @@ export default function Header() {
   const phoneTel = phonePrimary.replace(/[^0-9+]/g, "");
 
   const navIdle =
-    "text-text/75 hover:bg-accent/10 hover:text-accent-deep";
-  const navActive = "bg-accent text-white hover:bg-accent-deep";
+    "border border-transparent text-text/75 hover:border-border hover:bg-slate-50 hover:text-primary";
+  const navActive = "border border-accent bg-accent text-white shadow-[0_4px_12px_rgba(21,128,61,0.22)] hover:bg-accent-deep";
 
   return (
     <header
       ref={rootRef}
       className={`sticky top-0 z-50 w-full overflow-visible font-body transition-all duration-300 ${
         scrolled || panel
-          ? "border-b border-border/70 bg-white/95 shadow-[0_8px_32px_rgba(15,23,42,0.08)] backdrop-blur-xl"
-          : "border-b border-border/60 bg-white"
+          ? "border-b border-border/60 bg-white/90 shadow-[0_10px_40px_rgba(15,23,42,0.08)] backdrop-blur-xl"
+          : "border-b border-border/40 bg-white/95 backdrop-blur-md"
       }`}
     >
-      <div className="hidden border-b border-white/10 bg-primary text-white sm:block">
-        <div className="mx-auto flex h-10 max-w-[1360px] items-center justify-between gap-4 px-4 xl:px-6">
+      <div className="hidden border-b border-white/10 bg-gradient-to-r from-primary via-[#0f1f3a] to-primary text-white sm:block">
+        <div className="mx-auto flex h-9 max-w-[1360px] items-center justify-between gap-4 px-4 xl:px-6">
           <div className="flex min-w-0 items-center gap-4 lg:gap-6">
             <a
               href={`tel:${phoneTel}`}
-              className="inline-flex items-center gap-1.5 font-body text-[12px] font-semibold text-white/90 transition-colors hover:text-white"
+              className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-2.5 py-1 font-body text-[11px] font-semibold text-white/90 ring-1 ring-white/10 transition-colors hover:bg-white hover:text-primary"
             >
-              <Phone className="h-3 w-3 text-accent" />
+              <Phone className="h-3 w-3 text-accent-soft" />
               {phonePrimary}
             </a>
             <a
               href={`mailto:${SITE_IDENTITY.contact.email}`}
-              className="inline-flex items-center gap-1.5 font-body text-[12px] font-semibold text-white/90 transition-colors hover:text-white"
+              className="inline-flex items-center gap-1.5 font-body text-[11px] font-medium text-white/80 transition-colors hover:text-white"
             >
-              <Mail className="h-3 w-3 text-accent" />
+              <Mail className="h-3 w-3 text-white/60" />
               {SITE_IDENTITY.contact.email}
             </a>
           </div>
@@ -464,7 +489,7 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={item.label}
-                className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/10 text-[11px] text-white transition-colors hover:bg-accent hover:text-white"
+                className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/10 text-[11px] text-white ring-1 ring-white/10 transition-colors hover:bg-accent hover:text-white hover:ring-accent"
               >
                 <item.Icon />
               </a>
@@ -482,11 +507,11 @@ export default function Header() {
           <Logo className="h-12 w-auto object-contain sm:h-14 xl:h-[60px]" />
         </Link>
 
-        <nav className="hidden min-[1180px]:flex flex-1 items-center justify-center gap-0.5">
+        <nav className="hidden min-[1180px]:flex flex-1 items-center justify-center gap-1">
           <Link
             href="/"
             onMouseEnter={scheduleClose}
-            className={`rounded-[10px] px-2.5 py-1.5 text-[13px] font-bold whitespace-nowrap transition-colors ${
+            className={`rounded-full px-3.5 py-1.5 text-[13px] font-bold whitespace-nowrap transition-all ${
               isActive("/") && !panel ? navActive : navIdle
             }`}
           >
@@ -508,15 +533,13 @@ export default function Header() {
                   onClick={() =>
                     setPanel((v) => (v === item.key ? null : item.key))
                   }
-                  className={`inline-flex items-center gap-1 rounded-[10px] px-2.5 py-1.5 text-[13px] font-bold whitespace-nowrap transition-colors ${
+                  className={`inline-flex items-center gap-1 rounded-full px-3.5 py-1.5 text-[13px] font-bold whitespace-nowrap transition-all ${
                     open || isActive(item.href) ? navActive : navIdle
                   }`}
                 >
                   {item.label}
                   <ChevronDown
-                    className={`h-3.5 w-3.5 transition-transform duration-200 ${
-                      open ? "rotate-180" : ""
-                    }`}
+                    className={`h-3.5 w-3.5 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
                   />
                 </button>
               </div>
@@ -534,7 +557,7 @@ export default function Header() {
               onClick={() =>
                 setPanel((v) => (v === "resources" ? null : "resources"))
               }
-              className={`inline-flex items-center gap-1 rounded-[10px] px-2.5 py-1.5 text-[13px] font-bold whitespace-nowrap transition-colors ${
+              className={`inline-flex items-center gap-1 rounded-full px-3.5 py-1.5 text-[13px] font-bold whitespace-nowrap transition-all ${
                 panel === "resources" ||
                 isActive("/blog") ||
                 isActive("/about") ||
@@ -543,11 +566,9 @@ export default function Header() {
                   : navIdle
               }`}
             >
-              Updates
+              Latest Updates
               <ChevronDown
-                className={`h-3.5 w-3.5 transition-transform duration-200 ${
-                  panel === "resources" ? "rotate-180" : ""
-                }`}
+                className={`h-3.5 w-3.5 transition-transform duration-200 ${panel === "resources" ? "rotate-180" : ""}`}
               />
             </button>
           </div>

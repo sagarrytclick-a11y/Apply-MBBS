@@ -39,7 +39,7 @@ export const SITE_IDENTITY = {
   ],
   contact: {
     phone: "+91 9907811114",
-    email: "info@applymbbs.com",
+    email: "singh.rahul927@gmail.com",
     googleMapsUrl:
       "https://www.google.com/maps/search/?api=1&query=12Th%20Floor%2C%20Iconic%20Tower%2C%20B1209%2C%20Block%20A%2C%20Industrial%20Area%2C%20Sector%2062%2C%20Noida%2C%20Uttar%20Pradesh%20201309",
   },
