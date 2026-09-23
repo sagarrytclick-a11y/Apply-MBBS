@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, useEffect, useMemo, useRef, useCallback } from "react";
+import React, { Suspense, useState, useEffect, useMemo, useRef, useCallback } from "react";
 import Link from "next/link";
+import { useSearchParams, useRouter } from "next/navigation";
 import {
   ArrowRight,
   Building2,
@@ -46,16 +47,24 @@ interface CollegeData {
 interface StateData {
   id: number;
   name: string;
+  slug: string;
   image: string;
   description: string;
   colleges: CollegeData[];
 }
 
-const MbbsIndiaPage: React.FC = () => {
+const MbbsIndiaPage: React.FC = () => (
+  <Suspense fallback={<CollegeGridSkeleton count={9} />}>
+    <MbbsIndiaContent />
+  </Suspense>
+);
+
+const MbbsIndiaContent: React.FC = () => {
+  const searchParams = useSearchParams();
+  const router = useRouter();
   const { openPopup } = usePopup();
   const [states, setStates] = useState<StateData[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selectedState, setSelectedState] = useState("");
   const [selectedType, setSelectedType] = useState<"all" | "Government" | "Private">("all");
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -112,6 +121,20 @@ const MbbsIndiaPage: React.FC = () => {
     [states]
   );
 
+  const stateSlug = searchParams.get("state");
+  const selectedState = useMemo(
+    () => (states.find((s) => s.slug === stateSlug) || {}).name || "",
+    [states, stateSlug]
+  );
+
+  const goState = useCallback((slug: string) => {
+    router.replace(
+      slug ? `/colleges/mbbs-india?state=${slug}` : "/colleges/mbbs-india",
+      { scroll: false }
+    );
+    setCurrentPage(1);
+  }, [router]);
+
   const filteredColleges = useMemo(
     () =>
       shuffle(
@@ -139,9 +162,10 @@ const MbbsIndiaPage: React.FC = () => {
   );
 
   const totalPages = Math.ceil(filteredColleges.length / collegesPerPage) || 1;
+  const safePage = Math.min(currentPage, totalPages);
   const currentColleges = filteredColleges.slice(
-    (currentPage - 1) * collegesPerPage,
-    currentPage * collegesPerPage
+    (safePage - 1) * collegesPerPage,
+    safePage * collegesPerPage
   );
 
   const govtCount = allColleges.filter((c) => c.type === "Government").length;
@@ -269,7 +293,7 @@ const MbbsIndiaPage: React.FC = () => {
               resultCount={filteredColleges.length}
               onReset={() => {
                 setSearch("");
-                setSelectedState("");
+                goState("");
                 setSelectedType("all");
                 setCurrentPage(1);
               }}
@@ -303,10 +327,7 @@ const MbbsIndiaPage: React.FC = () => {
               >
                 <button
                   type="button"
-                  onClick={() => {
-                    setSelectedState("");
-                    setCurrentPage(1);
-                  }}
+                  onClick={() => goState("")}
                   className={`shrink-0 rounded-[10px] border px-3.5 py-2 font-body text-xs font-bold transition-colors ${
                     selectedState === ""
                       ? "border-primary bg-primary text-white"
@@ -319,10 +340,7 @@ const MbbsIndiaPage: React.FC = () => {
                   <button
                     key={s.id}
                     type="button"
-                    onClick={() => {
-                      setSelectedState(s.name);
-                      setCurrentPage(1);
-                    }}
+                    onClick={() => goState(s.slug)}
                     className={`inline-flex shrink-0 items-center gap-1.5 rounded-[10px] border px-3.5 py-2 font-body text-xs font-bold transition-colors ${
                       selectedState === s.name
                         ? "border-primary bg-primary text-white"
