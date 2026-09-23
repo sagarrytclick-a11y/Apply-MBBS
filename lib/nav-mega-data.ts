@@ -26,6 +26,8 @@ export type NavCollege = {
 
 export type NavState = {
   name: string;
+  slug: string;
+  href: string;
   colleges: NavCollege[];
 };
 
@@ -67,9 +69,12 @@ export const indiaStates: NavState[] = shuffle(
   (mbbsIndia.states || []).map(
     (s: {
       name: string;
+      slug: string;
       colleges?: Array<{ id: number; name: string; city: string; type?: string }>;
     }) => ({
       name: s.name,
+      slug: s.slug,
+      href: `/colleges/mbbs-india?state=${s.slug}`,
       colleges: shuffle(
         (s.colleges || []).map((c) => mapCollege(c)),
         seed + s.name.length

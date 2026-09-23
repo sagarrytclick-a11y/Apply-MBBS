@@ -65,6 +65,7 @@ function ListWisePanel({
   itemPrefix,
   panelTitle,
   panelDesc,
+  onNavigate,
 }: {
   categories: CategoryItem[];
   directoryHref: string;
@@ -73,6 +74,7 @@ function ListWisePanel({
   itemPrefix?: string;
   panelTitle: string;
   panelDesc: string;
+  onNavigate?: () => void;
 }) {
   const [activeId, setActiveId] = useState<string | null>(
     () => categories[0]?.id ?? null
@@ -183,7 +185,11 @@ function ListWisePanel({
               {active ? active.label.toUpperCase() : "UNIVERSITIES"}{" "}
               <span className="font-medium normal-case tracking-normal text-muted/70">· {list.length} COLLEGES</span>
             </p>
-            <Link href={active?.href || directoryHref} className="hidden items-center gap-1 font-body text-[11px] font-bold text-accent-deep hover:underline sm:inline-flex">
+            <Link
+              href={active?.href || directoryHref}
+              onClick={onNavigate}
+              className="hidden items-center gap-1 font-body text-[11px] font-bold text-accent-deep hover:underline sm:inline-flex"
+            >
               View state <ArrowUpRight className="h-3 w-3" />
             </Link>
           </div>
@@ -226,6 +232,7 @@ function ListWisePanel({
 
           <Link
             href={active?.href || directoryHref}
+            onClick={onNavigate}
             className="mt-4 inline-flex h-11 w-full shrink-0 items-center justify-center gap-2 rounded-[12px] bg-accent font-body text-[13px] font-extrabold uppercase tracking-[0.06em] text-white transition-colors hover:bg-accent-deep sm:hidden"
           >
             {active ? `Explore ${active.label}` : directoryLabel}
@@ -237,12 +244,11 @@ function ListWisePanel({
   );
 }
 
-function IndiaPanel() {
+function IndiaPanel({ onNavigate }: { onNavigate?: () => void }) {
   const categories: CategoryItem[] = indiaStates.map((s) => ({
     id: s.name,
     label: s.name,
-    meta: `${s.colleges.length} colleges`,
-    href: "/colleges/mbbs-india",
+    href: s.href,
     colleges: s.colleges,
   }));
 
@@ -254,6 +260,7 @@ function IndiaPanel() {
       panelTitle="MBBS in India"
       panelDesc="Browse state-wise medical colleges, NEET counselling, fees & admission guidance."
       emptyHint="Select a state to see listed medical colleges."
+      onNavigate={onNavigate}
     />
   );
 }
@@ -262,7 +269,6 @@ function AbroadPanel() {
   const categories: CategoryItem[] = abroadCountries.map((c) => ({
     id: c.slug,
     label: c.name,
-    meta: `${c.colleges.length} colleges`,
     href: c.href,
     colleges: c.colleges,
   }));
@@ -284,7 +290,6 @@ function MdMsPanel() {
   const categories: CategoryItem[] = mdMsStates.map((s) => ({
     id: s.slug,
     label: s.name,
-    meta: `${s.count} colleges`,
     href: s.href,
     colleges: s.colleges,
   }));
@@ -728,7 +733,9 @@ export default function Header() {
             onMouseLeave={scheduleClose}
           >
             <div className="he-container pb-4 pt-2">
-              {panel === "india" && <IndiaPanel />}
+              {panel === "india" && (
+                <IndiaPanel onNavigate={() => setPanel(null)} />
+              )}
               {panel === "abroad" && <AbroadPanel />}
               {panel === "mdms" && <MdMsPanel />}
               {panel === "resources" && <ResourcesPanel />}
@@ -794,7 +801,11 @@ export default function Header() {
                           indiaStates.slice(0, 8).map((s) => (
                             <Link
                               key={s.name}
-                              href="/colleges/mbbs-india"
+                              href={s.href}
+                              onClick={() => {
+                                setMobileOpen(false);
+                                setPanel(null);
+                              }}
                               className="block rounded-[10px] px-4 py-2 text-sm font-semibold text-muted"
                             >
                               {s.name}
@@ -805,6 +816,10 @@ export default function Header() {
                             <Link
                               key={c.slug}
                               href={c.href}
+                              onClick={() => {
+                                setMobileOpen(false);
+                                setPanel(null);
+                              }}
                               className="block rounded-[10px] px-4 py-2 text-sm font-semibold text-muted"
                             >
                               Study in {c.name}
@@ -815,6 +830,10 @@ export default function Header() {
                             <Link
                               key={s.slug}
                               href={s.href}
+                              onClick={() => {
+                                setMobileOpen(false);
+                                setPanel(null);
+                              }}
                               className="block rounded-[10px] px-4 py-2 text-sm font-semibold text-muted"
                             >
                               {s.name}

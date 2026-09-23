@@ -57,7 +57,7 @@ export const SITE_IDENTITY = {
     favicon: "/favicon.png",
   },
   social: {
-    facebook: "https://facebook.com/applymbbs",
+    facebook: "https://www.facebook.com/share/19RBNMPDaV/",
     instagram: "https://www.instagram.com/applymbbs.in?stkn=b3lvNjFkOTM0anA0",
     linkedin: "https://linkedin.com/company/applymbbs",
     youtube: "https://youtube.com/@applymbbs",
