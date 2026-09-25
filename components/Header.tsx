@@ -309,9 +309,9 @@ function MdMsPanel() {
 const resourceLinks = [
   {
     href: "/neet-rank-predictor",
-    title: "NEET Rank Predictor",
-    desc: "Turn your score and category into an estimated AIR.",
-    badge: "NEW",
+    title: "NEET UG 2026 Cutoffs",
+    desc: "Real category-wise qualifying marks & closing ranks.",
+    badge: "2026",
   },
   {
     href: "/colleges/compare",
@@ -605,7 +605,7 @@ export default function Header() {
           <Link
             href="/neet-rank-predictor"
             onMouseEnter={scheduleClose}
-            aria-label="NEET Rank Predictor"
+            aria-label="NEET UG 2026 Cutoffs"
             className={`group relative z-[1] inline-flex h-10 items-center gap-2 overflow-hidden rounded-[12px] px-3.5 font-body text-[13px] font-bold transition-all hover:-translate-y-0.5 ${
               isActive("/neet-rank-predictor")
                 ? "bg-gradient-to-r from-accent to-accent-deep text-white shadow-[0_4px_14px_rgba(21,128,61,0.35)]"
@@ -621,7 +621,7 @@ export default function Header() {
             >
               <Target className="h-3.5 w-3.5" strokeWidth={2.4} />
             </span>
-            <span className="relative whitespace-nowrap">NEET Predictor</span>
+            <span className="relative whitespace-nowrap">NEET Cutoffs</span>
           </Link>
 
           <div className="relative">
@@ -688,7 +688,7 @@ export default function Header() {
               setMobileOpen(false);
               setPanel(null);
             }}
-            aria-label="NEET Rank Predictor"
+            aria-label="NEET UG 2026 Cutoffs"
             className={`inline-flex h-10 items-center gap-1.5 rounded-[10px] px-2.5 font-body text-[12px] font-bold ${
               isActive("/neet-rank-predictor")
                 ? "bg-gradient-to-r from-accent to-accent-deep text-white shadow-[0_3px_10px_rgba(21,128,61,0.3)]"
@@ -704,7 +704,7 @@ export default function Header() {
             >
               <Target className="h-3.5 w-3.5" strokeWidth={2.4} />
             </span>
-            <span className="pr-0.5">NEET</span>
+            <span className="pr-0.5">Neet</span>
           </Link>
           <button
             type="button"
@@ -917,10 +917,10 @@ export default function Header() {
                   </span>
                   <span>
                     <span className="block font-body text-[15px] font-bold text-inherit">
-                      NEET Rank Predictor
+                      NEET UG 2026 Cutoffs
                     </span>
                     <span className="block font-body text-xs text-muted group-hover:text-white/80">
-                      Estimate rank from your score
+                      Accuracy-checked 2026 qualifying & closing ranks
                     </span>
                   </span>
                 </Link>

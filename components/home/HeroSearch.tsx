@@ -62,8 +62,8 @@ const STATIC_PAGES: SearchHit[] = [
   {
     id: "page-neet",
     kind: "page",
-    title: "NEET Rank Predictor",
-    subtitle: "Tool",
+    title: "NEET Cutoffs",
+    subtitle: "Data",
     href: "/neet-rank-predictor",
     trending: true,
   },
