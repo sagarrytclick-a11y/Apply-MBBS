@@ -3,13 +3,15 @@ import { SITE_IDENTITY } from "@/app/config/site_identity";
 import { buildPageMetadata, jsonLdScript } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "NEET Rank Predictor 2026 | Estimate Your Rank by Category",
-  description: `Predict your NEET rank from your score and category (UR, EWS, OBC, SC, ST, PwBD). Check estimated AIR, category rank, and college outlook with ${SITE_IDENTITY.name}.`,
+  title: "NEET UG 2026 Cutoffs | Qualifying Marks & Closing Ranks (India)",
+  description: `Accurate NEET UG 2026 cutoffs: category-wise qualifying marks, All India Quota closing ranks, and AIIMS Round 1 category-wise cutoffs — compiled from official NTA and MCC data by ${SITE_IDENTITY.name}.`,
   path: "/neet-rank-predictor",
   keywords: [
+    "NEET 2026 cutoff",
     "NEET rank predictor",
-    "NEET 2026 rank",
-    "NEET category rank",
+    "NEET closing rank 2026",
+    "AIIMS NEET cutoff",
+    "NEET qualifying marks 2026",
     "NEET score to rank",
     SITE_IDENTITY.name,
   ],
@@ -23,7 +25,7 @@ const jsonLd = {
     {
       "@type": "ListItem",
       position: 2,
-      name: "NEET Rank Predictor",
+      name: "NEET UG 2026 Cutoffs",
       item: `${SITE_IDENTITY.website}/neet-rank-predictor`,
     },
   ],

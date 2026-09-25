@@ -395,7 +395,7 @@ const MdMsPage: React.FC = () => {
             </Button>
             <Link href="/neet-rank-predictor">
               <Button variant="secondary" size="lg">
-                Try NEET UG predictor
+                Check NEET 2026 cutoffs
               </Button>
             </Link>
           </div>

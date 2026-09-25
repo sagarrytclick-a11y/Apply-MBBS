@@ -2,26 +2,26 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Target, TrendingUp, Building2 } from "lucide-react";
+import { ArrowRight, BadgeCheck, TrendingUp, Landmark } from "lucide-react";
 import { SectionHeader } from "../ui/SectionHeader";
 import { Button } from "../ui/Button";
 import { FadeIn } from "../ui/FadeIn";
 
 const points = [
   {
-    icon: Target,
-    title: "Marks to AIR",
-    desc: "Plug in your NEET UG score and see an estimated All India Rank band.",
+    icon: BadgeCheck,
+    title: "Official 2026 cutoffs",
+    desc: "Category-wise qualifying marks straight from the NTA NEET UG 2026 result.",
   },
   {
     icon: TrendingUp,
-    title: "Past-year patterns",
-    desc: "Projections lean on previous score–rank trends for a grounded picture.",
+    title: "Closing ranks",
+    desc: "MCC All India Quota and AIIMS Round 1 closing ranks — college by college.",
   },
   {
-    icon: Building2,
-    title: "College bands",
-    desc: "Spot which campus tiers often open near your predicted rank.",
+    icon: Landmark,
+    title: "Plan your shot",
+    desc: "Compare your score against real cutoffs and shortlist seats you can actually win.",
   },
 ];
 
@@ -34,11 +34,11 @@ export default function NeetRankSection() {
             eyebrow="NEET toolkit"
             title={
               <>
-                Gauge your probable{" "}
-                <span className="text-secondary">NEET rank</span>
+                NEET UG 2026{" "}
+                <span className="text-secondary">cutoffs, verified</span>
               </>
             }
-            description="Fast score-to-rank estimate — then sit with us for a college shortlist that matches reality."
+            description="Accurate category-wise qualifying marks and closing ranks from official NTA and MCC data — no guesses."
             className="mb-8"
           />
         </FadeIn>
@@ -70,18 +70,18 @@ export default function NeetRankSection() {
             <div className="relative overflow-hidden rounded-[20px] border border-primary bg-primary p-6 sm:p-8 h-full flex flex-col justify-center shadow-[0_8px_28px_rgba(30,41,59,0.2)]">
               <div className="pointer-events-none absolute -right-8 -top-8 h-36 w-36 rounded-full bg-accent/20 blur-3xl" />
               <p className="relative font-body text-[12px] font-bold uppercase tracking-[0.14em] text-accent mb-3">
-                Free AIR estimate
+                NEET UG 2026 · Updated Aug 2026
               </p>
               <h3 className="relative font-display text-2xl sm:text-3xl font-extrabold text-white leading-snug">
-                See where your score could sit
+                Know where your score actually sits
               </h3>
               <p className="relative mt-3 font-body text-sm text-white/75 leading-relaxed">
-                Approximate All India Rank from your NEET UG marks — then map
-                India or abroad options with counselling support.
+                See qualifying-mark ranges for every category, AIQ closing ranks,
+                and AIIMS campus-by-campus cutoffs.
               </p>
               <Link href="/neet-rank-predictor" className="relative mt-6 inline-flex">
                 <Button size="lg" className="group">
-                  Launch rank predictor
+                  View NEET cutoffs
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>

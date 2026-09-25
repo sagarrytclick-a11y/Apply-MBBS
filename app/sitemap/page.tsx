@@ -20,7 +20,7 @@ const sections = [
       { name: "About Us", href: "/about" },
       { name: "Contact Us", href: "/contact" },
       { name: "Blog", href: "/blog" },
-      { name: "NEET Rank Predictor", href: "/neet-rank-predictor" },
+      { name: "NEET UG 2026 Cutoffs", href: "/neet-rank-predictor" },
       { name: "Compare Colleges", href: "/colleges/compare" },
     ],
   },
